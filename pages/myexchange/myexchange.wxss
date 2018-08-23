@@ -1,0 +1,29 @@
+/* pages/myexchange/myexchange.wxss */
+.all{
+  display: flex;
+  flex-direction: column;
+}
+.all .item{
+  display: flex;
+  flex-direction: row;
+}
+.all .item .left{
+  display: flex;
+  flex-direction: row;
+}
+.all .item .left image{
+  width:163rpx;
+  height:102rpx;
+}
+.all .item .left .str{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+}
+.all .item .left .str view{
+  flex-direction: column;
+}
+.all .item .left .str text:first-child{
+  color:#e9322a;
+  margin-bottom: 24rpx;
+}

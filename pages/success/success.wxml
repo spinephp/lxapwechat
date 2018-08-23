@@ -1,0 +1,18 @@
+<view class='main'>
+  <view class='img'>
+    <image src="/images/success.png"></image>
+  </view>
+  <view class="text">恭喜你，{{title}}</view>
+  <view wx:if="{{type==1}}" class="jump">
+    <navigator url="/pages/mybought/mybought">可在我的已购课程查看</navigator>
+  </view>
+  <view wx:elif="{{type==2}}" class="jump">
+    <navigator url='/pages/myauditions/myauditions'>可在我的试听课查看</navigator>
+  </view>
+  <view wx:elif="{{type==3}}" class="jump">
+    <navigator url='/pages/mybargain/mybargain'>可在我的砍价查看</navigator>
+  </view>
+  <view wx:elif="{{type==4}}" class="jump">
+    <navigator>可在我的兑换查看</navigator>
+  </view>
+</view>

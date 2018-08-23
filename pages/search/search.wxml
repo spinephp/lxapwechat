@@ -1,0 +1,19 @@
+<view class='header'>
+  <view class='type'>
+    <picker bindchange="typeChange" value="{{type_index}}" range-key="text" range="{{type_list}}">
+      <view>{{type_list[type_index].text}}</view>
+    </picker>
+  </view>
+  <view class='search'>
+    <image src="/images/search_icon.png"></image>
+    <input placeholder='搜索附近课程、机构' bindconfirm='change' bindinput='input' value="{{keyword}}"></input>
+    <text bindtap='search'>搜索</text>
+  </view>
+</view>
+<view class='title'>热门搜索</view>
+<view class="list">
+  <view class="item" wx:for="{{hot_list}}" wx:key="key" data-word="{{item.keyword}}" bindtap='jump'>{{item.keyword}}</view>
+  
+</view>
+<view>
+</view>

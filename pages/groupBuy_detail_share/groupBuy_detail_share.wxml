@@ -1,0 +1,93 @@
+<view class="container">
+  <view class="success" wx:if="{{success==1 || group_success=='success'}}">
+    <view class="sucImg">
+      <image src="/images/success_group.png"></image>
+    </view>
+    <view class="sucText">
+      <view class="title">恭喜你，拼团成功！</view>
+      <view class="sucJump">可在我的-
+        <navigator url='/pages/mygroup/mygroup'>我的团购</navigator>页查看</view>
+    </view>
+  </view>
+
+  <view class="originator item clear">
+    <view class="left">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{userInfo.avatar_url}}"></image>
+
+    </view>
+    <view class="right">
+      <view class="org_addr">{{userInfo.nick_name}}</view>
+      <view class="clear"></view>
+      <view class="other clear">
+        <view class='distance'>
+          发起
+          <text>{{course_info.groupBuyingCourse.group_people_count}}人</text>团购
+        </view>
+        <view class="apply">
+          <text>{{processData.start_time}}开团</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="class_detail item clear">
+      <view class="left">
+        <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{course_info.picurl}}"></image>
+      </view>
+      <view class="right">
+        <view class="course_name">{{course_info.name}}</view>
+        <view class="other clear">
+          <view class="price">
+            <text class="title">团购价</text>
+            <text class='active_price'>￥{{course_info.groupBuyingCourse.group_price}}</text>
+            <text class='init_price'>￥{{course_info.price}}</text>
+          </view>
+          <view class="distance">
+
+            <image src="/images/pos.png"></image>
+            <text>{{distance}}km</text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="groupBuy_detail">
+      <view class="title" wx:if="{{group_success=='success'}}"><text>团长人气太高，拼团成功！</text></view>
+      <view class="title" wx:elif="{{group_success=='fail'}}"><text>该团未能凑满人数，款项将原路返回！</text></view>
+      <view class="title" wx:else>邀请<text>{{processcount}}</text>位好友，团满即可拼团成功</view>
+      <view class="memList clear">
+        <view class="memItem" wx:for="{{memList}}" wx:key="key">
+          <image src='https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}'></image>
+
+          <view class='role' hidden="{{item.is_header!=1}}">团长</view>
+        </view>
+      </view>
+
+      <view class="btn" hidden="{{group_success=='success' || group_success=='fail'}}">
+        <image src="/images/groupBuyBtn.png"></image>
+        <button bindtap="joinGroup" wx:if="{{!is_groupMem}}">我要参团</button>
+        <button open-type="share" wx:else>邀请好友</button>
+      </view>
+      <view class="countdown"  hidden="{{group_success=='success'}}">
+        <text style="margin-right:20rpx;">剩余</text>
+        <text class="time">{{countDownDay}}</text>天
+        <text class="time">{{countDownHour}}</text>：
+        <text class="time">{{countDownMinute}}</text>：
+        <text class="time">{{countDownSecond}}</text>
+        <text style="margin-left:20rpx;">结束</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="intro">
+    <view style='display:inline-block' class="title">拼团玩法</view>
+    <text>选择商品开团>支付开团或参团>邀请好友参团>人满成团</text>
+  </view>
+  <view class="banner">
+    <image src='/images/lexiang.png'></image>
+  </view>
+
+
+</view>

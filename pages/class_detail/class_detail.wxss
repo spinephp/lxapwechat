@@ -1,0 +1,954 @@
+@import '/pages/template/template.wxss';
+
+.all {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.all .chooseList {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 99999;
+}
+
+.all .chooseList view {
+  width: 33.3%;
+  text-align: center;
+  float: left;
+  line-height: 80rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  color:#666;
+}
+.all .chooseList view text{
+  display: inline-block;
+  height: 90%;
+}
+.all .chooseList .cur {
+  color: #333;
+  font-size: 34rpx;
+}
+.all .chooseList .cur text{
+  border-bottom: 6rpx solid #3C86FC;
+}
+
+/*课程内容*/
+.detail{
+   background: #e6e6e6
+}
+.course_summary {
+  background: #fff;
+  padding-bottom: 3%;
+  
+}
+.course_summary .summary,.course_summary .price{
+  padding:3%;
+  padding-bottom: 0;
+}
+.course_summary .price{
+  padding-top: 0;
+}
+
+
+.course_summary .title .name {
+  float: left;
+  width: 85%;
+  line-height: 65rpx;
+  /*overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;*/
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.course_summary .title .collect {
+  float: right;
+  width: 14%;
+  border-left: 1px solid #ccc;
+  text-align: center;
+  height: 65rpx;
+}
+
+.course_summary .collect image {
+  width: 32rpx;
+  height: 32rpx;
+  display: block;
+  margin: 0 auto 5rpx;
+}
+
+.course_summary .collect view {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.course_summary .date {
+ 
+  font-size: 26rpx;
+}
+
+.course_summary .date view {
+  float: left;
+}
+
+.course_summary .date .class_count {
+  /*width: 28%;
+  margin-right: 7%;*/
+  width: 100%;
+  color: #666;
+}
+
+.course_summary .date .class_date {
+  width: 65%;
+  color: #999;
+}
+
+.course_summary .price {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.course_summary .price .course_price {
+  float: left;
+}
+
+.course_summary .price .active_price {
+  color: #f4363c;
+  font-size: 36rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.course_summary .price .init_price {
+  color: #666;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  vertical-align: middle;
+}
+
+.course_summary .price .distance {
+  float: right;
+}
+
+.course_summary .price .distance image {
+  display: inline-block;
+  height: 28rpx;
+  width: 20rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.course_summary .price .distance text {
+  vertical-align: middle;
+  color: #666;
+  font-size: 24rpx;
+}
+
+/*服务说明*/
+
+.service_des {
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 3%;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.service_des .title {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.service_des .title view {
+  float: left;
+}
+.service_des .title .changeArrow{
+   float: right;
+   width: 10%;
+   text-align: center;
+   line-height: 60rpx;
+
+}
+.service_des .title image {
+  
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: 15rpx;
+}
+
+.service_des .service_list{
+  padding-bottom: 3%;
+}
+.service_des .service_list view {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.service_des .service_list image {
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  margin-right: 10rpx;
+}
+
+/*老师简介*/
+
+.teacher_dec {
+  margin-top: 10rpx;
+  padding: 3%;
+  background: #fff;
+}
+
+.teacher_dec .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.teacher_dec .title {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  width: 100%;
+  font-weight: 700;
+  color: #333;
+}
+
+.teacher_dec .ter {
+  margin-top: 35px;
+  width: 94%;
+  margin-left: 3%;
+  min-height: 220rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.teacher_dec .photo {
+  position: absolute;
+  top: -50rpx;
+  width: 100%;
+  text-align: center
+}
+
+.teacher_dec .photo image {
+  vertical-align: middle;
+  width: 120rpx;
+  height: 120rpx;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.teacher_dec .photo text {
+  font-size: 32rpx;
+}
+
+.ter .teacher_brief {
+  text-indent: 2em;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 80rpx;
+
+  color: #666;
+}
+
+/*机构*/
+
+.org {
+  margin-top: 10rpx;
+  background: #fff;
+  overflow: hidden;
+  padding: 3%;
+}
+
+.org .title {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.org .title view {
+  float: left;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.org .title image {
+  float: right;
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: 15rpx;
+}
+
+.org .org_info image {
+  float: left;
+  width: 22%;
+  margin-right: 5%;
+  height: 150rpx;
+}
+
+.org .org_info .org_name {
+  float: left;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.org .org_info .org_name .name {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+.org .org_info .org_name .count{
+  text-align: center;
+}
+
+.org .org_brief {
+  color: #666;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+/*已报名*/
+.sign_up{
+  background: #fff;
+  margin-top: 10rpx;
+}
+
+.sign_up .title ,.jump_eva .title{
+  width: 92%;
+  margin: 0 auto 8px;
+  border-bottom: 1px solid #ddd;
+  height: 45px;
+  line-height: 45px;
+  font-weight: normal;
+}
+
+.title .all_count {
+  float: left;
+}
+
+.title .all_sign {
+  float: right;
+  color: #fd6b14;
+}
+
+.title .all_sign image {
+  display: inline-block;
+  vertical-align: middle;
+  width:20rpx;
+  height: 20rpx;
+}
+
+.sign_up .cosur {
+  width: 96%;
+  margin: 0 auto;
+  height: 80px;
+  overflow: hidden;
+}
+
+
+.sign_up .cosur3 {
+  /*float: left;*/
+  width: 15%;
+  margin-right: 2%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.everyCount {
+  position: absolute;
+  width: 50rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 12rpx;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -25rpx;
+  letter-spacing: 2rpx;
+  background: #fd6b14;
+  z-index: 30;
+}
+
+.sign_up .cosur3:last-child {
+  margin-right: 0;
+}
+
+.sign_up .cosur3 image {
+  width: 75%;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 80rpx;
+}
+
+.sign_up .cosur3 .user_name {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+  color: #666;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/*课程简介*/
+.more_info{
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 3%;
+  padding-bottom: 88rpx;
+}
+
+
+.intr{
+   
+    color: #333;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-bottom: 16rpx;
+    font-size: 32rpx;
+}
+.intr1{
+    margin-top: 20rpx;
+    width: 94%;
+    margin-left: 3%;
+    overflow: hidden;
+}
+.intr2{
+    overflow: hidden;
+}
+.intr2 .h6{
+    font-size: 32rpx;
+    line-height:110rpx;
+    text-align: center;
+    width: 100%;
+    height: 100rpx;
+    color: #000;
+}
+.intr2 image{
+  height: 120rpx;
+}
+.intr3{
+   /* width: 68%;*/
+    overflow: hidden;
+    padding-bottom: 20rpx;
+}
+.intr3 .p{
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 40rpx;
+    text-indent: 2em;
+}
+.ring1{
+    float: right;
+    width: 200rpx;
+    overflow: hidden;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+}
+#intr1{
+   width: 100%;
+}
+.ring{
+    float: left;
+    width: 200rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+    margin-top: 10rpx;
+}
+#intr2{
+   width: 100%;
+}
+.intr2_1{
+    overflow: hidden;
+    float: left;
+    margin-top: 30rpx;
+}
+.intr3_1{
+    overflow: hidden;
+    padding-bottom: 20rpx;
+}
+.intr3_1 .p{
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 36rpx;
+    text-indent: 2em;
+}
+/*评价*/
+.evalution{
+  background: #fff;
+  padding: 3%;
+  padding-top:0
+}
+
+.a9_top{
+    /*width: 100%;*/
+    overflow: hidden;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 20rpx solid #EEEEEE;
+    padding-left: 5%;
+}
+
+.a9_l .h1{
+    color: #fd6e1c;
+    font-size: 36rpx;
+    text-align: center;
+    /*font-weight: bold;*/
+    vertical-align: middle;
+}
+
+.a9_l .h2{
+    font-size: 36rpx;
+    color: #666666;
+    line-height: 40rpx;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+.a9_l .h3{
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30rpx;
+}
+.a9_l .h3 image{
+    float: left;
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 6rpx;
+}
+.a9_r{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    line-height: 80rpx;
+    margin-bottom: 20rpx;
+}
+.a9_r view{
+    float: left;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 120rpx;
+    border: 1px solid #ffcf00;
+    border-radius: 10rpx;
+    text-align: center;
+    color: #fd854d;
+
+}
+
+.a9_r .cu{
+    background: #fd6e1c;
+    border: 1px solid #fd6e1c;
+    color: #fff
+
+}
+
+.a9_main{
+    width: 100%;
+
+}
+.jump_eva{
+    width: 100%;
+
+}
+.jump_eva image{
+  height: 20rpx;
+  width: 20rpx;
+  
+
+}
+.jump_eva .h1{
+    width: 96%;
+    margin: 0 auto;
+    line-height: 80rpx;
+    padding-top: 10rpx;
+    font-weight: normal;
+    font-size: 32rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.a9_d{
+    padding-bottom: 20rpx;
+    width: 94%;
+    margin-left: 3%;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #eee;
+}
+.a9_d .i{
+  
+    float: left;
+    width: 15%;
+    overflow: hidden;
+}
+.a9_d .i image{
+    width: 100%;
+    border-radius: 50%;
+    height: 100rpx;
+    
+}
+.a9_detail{
+    width: 82%;
+    float: right;
+   
+}
+.tai1{
+    overflow: hidden;
+    line-height: 36rpx;
+}
+.tai1 .h4{
+    font-size: 32rpx;
+    color: #333333;
+    float: left;
+    width: 50%;
+    font-weight: normal;
+}
+.tai1 .h3{
+    font-size: 26rpx;
+    font-weight: normal;
+    color: #666;
+    float: right;
+}
+.tai2{
+    overflow: hidden;
+    font-size: 30rpx;
+    color: #666;
+}
+.tai2 image{
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 6rpx;
+}
+.a9_detail .m{
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 48rpx;
+}
+.tai3{
+    overflow: hidden;
+}
+.tai3 image{
+    margin-top: 20rpx;
+    float: left;
+    margin-right: 5%;
+    width: 30%;
+    height: 100rpx;
+}
+.tai3 image:nth-child(3),.tai3 image:nth-child(6),.tai3 image:nth-child(9){
+    margin-right: 0px;
+}
+.tai4{
+    overflow: hidden;
+    margin-top: 10rpx;
+}
+.tai4 image{
+    width: 30rpx;
+    height: 20rpx;
+    margin-left: 5%;
+    display: block;
+}
+.tai4 .p{
+    border-radius: 6rpx;
+    background: #EEEEEE;
+    color: #999999;
+    padding: 10rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+.list{
+  padding-top: 20rpx;
+}
+.list .item:last-child{
+  margin-bottom: 0
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 100%;
+  background: #fff;
+  border-top:2rpx solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000
+}
+.bottom .float{
+  flex:none;
+  height: 88rpx;
+  text-align: center;
+}
+.bottom .float navigator{
+  height: 88rpx;
+}
+.bottom .img_view{
+  width: 16%;
+  
+  text-align: center
+}
+.bottom .img_view image{
+  height: 36rpx;
+  width: 36rpx;
+  display: block;
+  margin: 12rpx auto 0;
+}
+.bottom .img_view view{
+  font-size: 22rpx;
+  line-height:40rpx;
+  color:#666;
+ 
+
+}
+.bottom .border-left{
+  border-right:1rpx solid #ebebeb;
+  
+}
+.bottom .buy,.bottom .active,.bottom .bargain,.bottom .groupBuy{
+  width: 34%;
+  background: #5493FA;
+  color: #fff;
+  font-size: 28rpx; 
+}
+
+.bottom .buy,.bottom .active{
+  background: #3BBBFB;
+  background: -webkit-linear-gradient(left, #3BBBFB, #3EA6FB); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #3BBBFB, #3EA6FB); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #3BBBFB, #3EA6FB); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #3BBBFB, #3EA6FB); /* Standard syntax */
+}
+
+
+/*活动样式*/
+.course_summary .active{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  width: 100%
+
+}
+.course_summary .active .dis_price{
+  width: 55%;
+  flex:none;
+  height: 100%;
+  line-height: 100rpx;
+  padding: 0 5%;
+  color: #fff;
+}
+.course_summary .active .dis_price image{
+  display: inline-block;
+  height: 46rpx;
+  width: 120rpx;
+  vertical-align: middle
+}
+.course_summary .active .dis_price .active_price{
+  margin: 0 5%;
+  font-size: 36rpx;
+  vertical-align: middle
+
+}
+.course_summary .active .dis_price .store_price{
+   vertical-align: middle;
+  font-size: 20rpx;
+  text-decoration: line-through;
+}
+.course_summary .active .countdown{
+  width: 35%;
+  flex:none;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  color:#666;
+}
+.course_summary .active .countdown .text{
+  line-height: 40rpx;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.course_summary .active .countdown .time{
+  line-height: 50rpx;
+  font-size: 24rpx;
+}
+.course_summary .active .time .bg_color{
+  display: inline-block;
+  padding: 0 4rpx;
+  color:#fff;
+  line-height: 45rpx;
+}
+.course_summary .active .time .separator{
+  margin: 0 4rpx;
+}
+.course_summary .activity .dis_price{
+
+  background: #EC5463;
+  background: -webkit-linear-gradient(left, #F482B6, #EA494E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #F482B6, #EA494E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #F482B6, #EA494E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #F482B6, #EA494E); /* Standard syntax */
+}
+.course_summary .activity .bg_color{
+  background: #EA494E;
+}
+.course_summary .activity .separator{
+  color:#EA494E;
+}
+
+.course_summary .bargain .dis_price{
+
+  background: #FFA042;
+  background: -webkit-linear-gradient(left, #FDB962, #FF9736); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #FDB962, #FF9736); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #FDB962, #FF9736); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #FDB962, #FF9736); /* Standard syntax */
+}
+.course_summary .bargain .bg_color{
+  background: #FF9736;
+}
+.course_summary .bargain .separator{
+  color:#FF9736;
+}
+
+.course_summary .groupBuy .dis_price{
+
+  background: #738CED;
+  background: -webkit-linear-gradient(left, #838DE8, #3886FD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #838DE8, #3886FD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #838DE8, #3886FD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #838DE8, #3886FD); /* Standard syntax */
+}
+.course_summary .groupBuy .bg_color{
+  background: #3886FD;
+}
+.course_summary .groupBuy .separator{
+  color:#3886FD;
+}
+
+/*去参团*/
+.groupList{
+  margin-top: 10rpx;
+  background: #fff;
+  padding:0 3%;
+}
+.groupList .groupItem{
+  border-bottom:1rpx solid #f3f3f3;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+
+}
+.groupList .groupItem:last-child{
+  border-bottom:none;
+}
+
+.groupList .groupLeft{
+  flex:none;
+  width: 40%;
+  
+}
+.groupList .groupLeft image{
+  display: inline-block;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  vertical-align: middle
+}
+.groupList .groupLeft text{
+  vertical-align: middle;
+  color:#333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  width: 70%;
+  display: inline-block
+}
+.groupList .groupRight{
+  flex: none;
+  width: 60%;
+  text-align: right;
+}
+.groupList .groupRight .surplus,.groupList .groupRight .btn{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center
+}
+.groupList .groupRight .surplus view{
+  line-height: 30rpx;
+}
+.groupList .groupRight  .surplus .count{
+  color:#333;
+  line-height: 40rpx;
+}
+.groupList .groupRight .count text{
+  color: #F13840;
+}
+.groupList .groupRight .date{
+  color: #999;
+  font-size: 24rpx;
+  
+  
+}
+.groupList .groupRight .btn{
+  margin-left: 40rpx;
+  background: #F87E2B;
+  background: -webkit-linear-gradient(left, #FE5407, #F4B459); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #FE5407, #F4B459); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #FE5407, #F4B459); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #FE5407, #F4B459); /* Standard syntax */
+  line-height: 50rpx;
+  padding: 0 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+
+.vid {
+  position: relative;
+  z-index: 999
+}
+
+/*联系客服按钮*/
+.cs_button {
+  background-color: #fff;
+  border: 0px;
+  height: 88rpx;
+  width: 100%;
+  padding: 0;
+  
+}
+
+.cs_button:after {
+  border: 0px;
+}
+
+.cs_image {
+  width: 36rpx;
+  height: 36rpx;
+}

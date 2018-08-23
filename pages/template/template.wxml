@@ -1,0 +1,184 @@
+<wxs module="filters" src="template.wxs"></wxs>
+<template name="courseItem">
+  <!-- 为足迹添加 -->
+  <view class="dateLabel" hidden="{{created_time==null}}"  wx:if="{{currentstu==-1}}">
+    <text>{{created_time}}</text>
+  </view>
+
+  <navigator url="/pages/class_detail/class_detail?id={{id}}">
+    <view class="left">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{picurl}}"></image>
+    </view>
+    <view class="right">
+      <view class="course_name clear">
+        <text class="c_name">{{name}}</text>
+        <view class="distance" hidden="{{distance==undefined}}"  wx:if="{{currentstu>=0}}"><!--为足迹修改-->
+          <image src="/images/pos.png"></image>
+          <text>{{filters.toFix(distance)}}km</text>
+        </view>
+      </view>
+      <view class="other org_name">
+        <view wx:if="{{org_name!=undefined}}">
+          【{{org_name}}】
+        </view>
+        <view wx:else>
+          课次：{{class_count}}讲
+        </view>
+
+      </view>
+      <view class="clear"></view>
+      <view class="other clear">
+        <view class="price">
+          <text class='active_price'>￥{{price}}</text>
+          <text class='init_price'>￥{{store_price}}</text>
+        </view>
+        <view class="apply" wx:if="{{currentstu>=0}}"><!--为足迹修改-->
+          <text wx:if="{{currentstu==0}}">立即报名</text>
+          <text wx:else>{{currentstu}}人已报名</text>
+        </view>
+        <view class="distance" hidden="{{distance==undefined}}"  wx:else>
+          <text>{{filters.toFix(distance)}}km</text>
+        </view>
+      </view>
+
+
+    </view>
+  </navigator>
+</template>
+
+<template name="activeItem">
+
+  <navigator url="/pages/class_detail/class_detail?id={{course_id}}">
+    <view class="left">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{course_picurl}}"></image>
+    </view>
+    <view class="right">
+      <view class="course_name clear">
+        <text class="c_name">{{course_name}}</text>
+        <view class="distance" hidden="{{distance==undefined}}">
+          <image src="/images/pos.png"></image>
+          <text>{{filters.toFix(distance)}}km</text>
+        </view>
+      </view>
+      <view class="other org_name">
+        <view hidden="{{sign!='groupbuying'}}">
+          {{group_people_count}}人成团
+        </view>
+
+      </view>
+      <view class="clear"></view>
+      <view class="other clear">
+        <view class="price">
+          <text class='active_price'>￥{{sign=='activity'?activity_price:sign=='bargain'?'0':group_price}}</text>
+          <text class='init_price'>￥{{course_price}}</text>
+        </view>
+        <view class="apply">
+          <view class="joinBtn">{{sign=='activity'?'参加活动':sign=='bargain'?'发起砍价':'开团'}}</view>
+        </view>
+      </view>
+
+
+    </view>
+  </navigator>
+</template>
+<template name='list'>
+  <view class="list">
+    <view class='item clear' wx:for="{{list}}" wx:for-item="item" wx:key="key">
+      <template is="courseItem" data="{{...item}}"></template>
+    </view>
+  </view>
+</template>
+<template name='active_list'>
+  <view class="list">
+    <view class='item clear' wx:for="{{list}}" wx:for-item="item" wx:key="key">
+      <template is="activeItem" data="{{...item}}"></template>
+    </view>
+  </view>
+</template>
+
+
+<template name='org_list'>
+  <view class="org_list">
+    <view class='item clear' wx:for="{{list}}" wx:for-item="item" wx:key="key">
+      <navigator url="/pages/org_detail/org_detail?id={{item.id}}">
+        <view class="left">
+          <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.logourl}}"></image>
+        </view>
+        <view class="right">
+          <view class="org_name">
+            <text>{{item.name}}</text>
+            <view hidden="{{item.is_multiple==0}}" class="chain">连锁</view>
+
+
+          </view>
+          <view class="org_addr">
+            地址：{{item.address}}
+          </view>
+          <view class="clear"></view>
+          <view class="other clear">
+            <view class='distance'>
+              <image src='/images/pos.png'></image>
+              <text>{{filters.toFix(item.distance)}}km</text>
+            </view>
+            <view class="apply">
+              <text wx:if="{{item.count==null}}">立即报名</text>
+              <text wx:else>{{item.count}}人已报名</text>
+            </view>
+          </view>
+
+
+        </view>
+      </navigator>
+    </view>
+  </view>
+</template>
+
+
+<template name='swiper'>
+  <swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:for-item="item" wx:key="key">
+      <swiper-item>
+        <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.picurl}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+
+<template name="courseItemEx">
+  <view class='title_row' hidden='{{toproworderno==undefined}}' wx:if="{{toproworderno}}">
+    <view>订单编号：{{order_no}}</view>
+    <view>{{created_time}}</view>
+  </view>
+  <navigator url="/pages/class_detail/class_detail?id={{id}}" style="{{toproworderno? '':'margin-top:-80rpx'}}">
+    <view class="left">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{picurl}}"></image>
+    </view>
+    <view class="right">
+      <view class="course_name clear">
+        <text class="c_name">{{course_name}}</text>
+        <view class="distance" hidden="{{distance==undefined}}">
+          <text>{{filters.toFix(distance)}}km</text>
+        </view>
+      </view>
+
+      <view class="clear"></view>
+      <view class="other clear">
+        <view class="price">
+          <view class='active_price'>{{payPriceName || ''}}￥{{charge}}</view>
+          <view><text class='init_price_title'>原价：</text><text class='init_price'>￥{{store_price}}</text></view>
+        </view>
+        <view class="apply" data-id='{{c_id}}' data-index='{{index}}' catchtap='apply_click' style="{{applyNameStyle==undefined? '':applyNameStyle}}">
+          <text class='joinBtn'>{{applyName}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view class='bottom'></view>
+</template>
+<template name='listEx'>
+  <view class="listex">
+    <view class='item clear' wx:for="{{list}}" wx:for-item="item" wx:key="key">
+      <template is="courseItemEx" data="{{index:index,...item}}"></template>
+    </view>
+  </view>
+</template>

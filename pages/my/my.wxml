@@ -1,0 +1,48 @@
+<view class='content' style="{{connecting? 'background-color:rgba(255,255,255,0.1)':'background-color:rgb(255,255,255)'}}">
+  <view class='top'>
+    <view class='my clear'>
+        <view class="right"><image src='/images/setting@2x.png' bindtap='mysetting'></image><!--<image src='/images/message@2x.png' bindtap='mymessage'></image>--></view>
+      <view class="middle">
+        <image src="{{img}}"></image>
+        <view class='name'>{{nick || name}}</view>
+        <view class='coin'>A+币：{{coin}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='my_column1 clear'>
+
+    <!--<view bindtap='mysyllabus'><image src='/images/syllabus@2x.png'></image><text>课程表</text></view>-->
+    <view bindtap='mycollection'><image src='/images/Collection@2x.png' mode="widthFix"></image><text>收藏</text></view>
+    <view bindtap='mycoiling'><image src='/images/Coiling@2x.png' mode="widthFix"></image><text>红包卡券</text></view>
+    <view bindtap='myfoot'><image src='/images/footprint@2x.png' mode="widthFix"></image><text>足迹</text></view>
+    
+  </view>
+
+  <view class='my_course'>
+     <view class='title'>我的课程</view>
+     <view class='my_column clear'>
+
+    <view bindtap='myauditions'><image src='/images/Auditions@2x.png' mode="widthFix"></image><text>试听课</text></view>
+    <view bindtap='mybought'><image src='/images/bought@2x.png' mode="widthFix"></image><text>已购课程</text></view>
+    <view bindtap='mygroup'><image src='/images/Group_purchase@2x.png' mode="widthFix"></image><text>我的团购</text></view>
+    <view bindtap='myeval'><image src='/images/eval@2x.png' mode="widthFix"></image><text>评价</text></view>
+    
+    </view>
+  </view>
+  <view class='other'>
+  <view class='my_column clear'>
+
+    <view bindtap='mybargain'><image src='/images/bargain@2x.png' mode="widthFix"></image><text>砍价</text></view>
+    <!--<view><image src='/images/change@2x.png'></image><text>兑换</text></view>-->
+    <view bindtap='myaboutus'><image src='/images/aboutus@2x.png' mode="widthFix"></image><text>关于我们</text></view>
+    <view bindtap='connecting'><image src='/images/service@2x.png' mode="widthFix"></image><text>联系客服</text></view>
+    
+    </view ></view>
+</view>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view bindtap='calling'>电话客服</view>
+  <button open-type='contact'>消息客服</button>
+  <view class='close_mask' bindtap="close_mask">取消</view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

@@ -1,0 +1,29 @@
+/* pages/myablutus/myaboutus.wxss */
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  flex-wrap:wrap;
+
+}
+.about image{
+  padding: 10rpx 0 60rpx 0;
+  width:207rpx;
+  height:164rpx;
+}
+.about view{
+  width:90%;
+  height:100%;
+  color: gray;
+  font-size: 24rpx;
+  margin:0rpx 40rpx;
+  align-self: flex-start;
+  word-wrap:break-word;
+  text-indent:2em;
+}
+.about .illu{
+  border-top: 1px dotted #ddd;
+  padding-top: 20rpx;
+
+}

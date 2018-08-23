@@ -1,0 +1,31 @@
+/* pages/myeval/myeval.wxss */
+@import '/pages/template/template.wxss';
+
+page{ 
+} 
+.navbar{ 
+ flex: none; 
+ display: flex; 
+ background: #fff; 
+ border-bottom: 2px solid #eee;
+} 
+.navbar .item{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+ color:gray;
+} 
+.navbar .item.active{ 
+ color: black; 
+} 
+.navbar .item.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 100rpx; 
+ right: 100rpx; 
+ height: 4rpx; 
+ background: rgb(109, 161, 245); 
+} 

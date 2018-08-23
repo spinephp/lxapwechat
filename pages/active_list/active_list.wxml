@@ -1,0 +1,6 @@
+<import src="/pages/template/template.wxml"/>
+<view class="banner">
+<image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{banner}}"></image>
+<!--<image src="{{banner}}"></image>-->
+</view>
+<template is='active_list' data='{{list}}'></template>

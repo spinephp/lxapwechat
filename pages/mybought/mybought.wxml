@@ -1,0 +1,3 @@
+<!--pages/mybought/mybought.wxml-->
+<import src="/pages/template/template.wxml"/>
+  <template is="listEx" data="{{list}}"></template> 

@@ -1,0 +1,76 @@
+<import src="/pages/template/template.wxml"/>
+
+<view class='header'>
+  <view class='position'  bindtap='setPos' data-latitude="{{pos_info.latitude}}" data-longitude="{{pos_info.longitude}}">
+    <image src="/images/positionIcon.png"></image>
+    <view class="text">{{pos_info.position_abbreviation==''?pos_info.position_description:pos_info.position_abbreviation}}</view>
+    <image src="/images/arrow_r.png" class="arrow"></image>
+  </view>
+  <view class='search' bindtap='jump'>
+    <image src="/images/search_icon.png"></image>
+    <input placeholder='搜索附近课程、机构'></input>
+  </view>
+</view>
+
+<view style="margin-top:120rpx;">
+  <template is="swiper" data="{{imgUrls}}"></template> 
+</view>
+ 
+
+<view class="hot">
+  <view class='item' data-type="1" data-title="热门活动" bindtap="toAcitiveList">
+    <image src="/images/active.png"></image>
+    <view>热门活动</view>
+  </view>
+  <view class='item' data-type="2" data-title="砍价" bindtap="toAcitiveList">
+    <image src="/images/bargain.png"></image>
+    <view>砍价</view>
+  </view>
+  <view class='item' data-type="3" data-title="团购" bindtap="toAcitiveList">
+    <image src="/images/bulk.png"></image>
+    <view>团购</view>
+  </view>
+  <view class='item'>
+  <navigator url="/pages/org_list/org_list">
+    <image src="/images/org.png"></image>
+    <view>品牌机构</view>
+    </navigator>
+  </view>
+  <!--<view class='item'>
+    <image src="/images/a+.png"></image>
+    <view>A+商城</view>
+  </view>-->
+  
+  <view class='item' wx:for='{{hot_type}}' bindtap="jumpList" data-type="{{item.value}}" data-text="{{item.text}}" wx:key="key">
+  <!--<navigator url="/pages/course/course?type={{item.value}}" open-type='switchTab'>-->
+    <image src="/images/{{item.icon}}"></image>
+    <view>{{item.text}}</view>
+    <!--</navigator>-->
+  </view>
+  
+  <view class='item'>
+  <navigator url="/pages/course/course" open-type='switchTab'>
+    <image src="/images/more.png"></image>
+    <view>更多</view>
+    </navigator>
+  </view>
+</view>
+
+<view class='main'>
+  <view class="title">附近课程</view>
+  <view>
+    <view class="order clear" bindtap='order_load'>
+
+      <text data-type="distance" class="{{order=='distance'?'cur':''}}">距离最近</text>
+      <text data-type="sale" class="{{order=='sale'?'cur':''}}">销量最高</text>
+      <text data-type="stars" class="{{order=='stars'?'cur':''}}">评分最高</text>
+    </view>
+    <view class="tag">
+      <view class="{{curEle=='newCourse'?'cur_Type':''}}"  bindtap="newCourse">新课程</view>
+      <view class="{{curEle=='active'?'cur_Type':''}}"  bindtap="active">活动</view>
+      <view class="{{curEle=='bargain'?'cur_Type':''}}"  bindtap="bargain">砍价</view>
+      <view class="{{curEle=='bulk'?'cur_Type':''}}"  bindtap="bulk">团购</view>
+    </view>
+  </view>
+  <template is="list" data="{{list}}"></template> 
+</view>

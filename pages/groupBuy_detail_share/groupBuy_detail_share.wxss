@@ -1,0 +1,276 @@
+.success{
+  background: -webkit-linear-gradient(left, #838EE8, #3585FC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #838EE8, #3585FC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #838EE8, #3585FC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #838EE8, #3585FC); /* Standard syntax */
+  padding: 50rpx 0;
+  text-align: center;
+  color:#fff;
+ 
+}
+.success .sucImg,.success .sucText{
+  display: inline-block;
+  vertical-align: middle;
+}
+.success .sucImg{
+  margin-right: 30rpx;
+}
+.success .sucImg image{
+    height: 100rpx;
+    width: 100rpx;
+}
+.success .sucText .title{
+  line-height: 60rpx;
+  font-size: 34rpx;
+}
+.success .sucText .sucJump{
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+.success .sucText .sucJump navigator{
+  text-decoration: underline;
+  display: inline-block
+}
+.originator {
+ 
+  background: #fff;
+  padding: 3%;
+  margin-bottom: 20rpx;
+  padding-top: 5%
+}
+
+.originator .left {
+  width: 25%;
+  float: left;
+  text-align: center
+}
+
+.originator .right {
+  width: 75%;
+  float: right;
+  color: #999;
+}
+
+.originator .left image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+
+
+.originator .org_addr {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  font-weight: bold;
+
+}
+
+.originator .distance {
+  float: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+
+.originator .apply {
+  float: right;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+
+
+.originator .distance text {
+  color: #F13840;
+  
+}
+
+.detail{
+  background: #fff;
+  padding: 3%;
+}
+.class_detail{
+  padding: 20rpx 3%;
+  color:#666;
+  border-bottom:1rpx solid #ddd;  
+}
+
+.class_detail .left {
+  width: 32%;
+  float: left;
+}
+
+.class_detail .right {
+  width: 65%;
+  float: right;
+  color: #666;
+}
+
+.class_detail .left image {
+  width: 100%;
+  height: 120rpx;
+}
+
+.class_detail .right .course_name{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 15rpx;
+  
+}
+
+.class_detail .right .other {
+ 
+ height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  width: 100%;
+}
+
+
+ .class_detail .other .price{
+  float: left;
+}
+
+.class_detail .distance{
+  float: right;
+  
+}
+
+.class_detail .distance image {
+  width: 20rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.class_detail .distance text {
+  vertical-align: middle;
+  font-size: 24rpx;
+  color: #999;
+}
+.class_detail .other .title{
+  font-size: 24rpx;
+}
+
+.class_detail .other .active_price {
+  color: #F10804;
+  font-size: 28rpx;
+  margin:0 10rpx;
+}
+
+.class_detail .other .init_price {
+  text-decoration: line-through;
+  font-size: 24rpx;
+}
+
+.groupBuy_detail{
+  text-align: center;
+  padding: 40rpx 0;
+  color: #666;
+}
+.groupBuy_detail .title{
+  line-height: 60rpx;
+  font-size: 28rpx;
+  
+}
+.groupBuy_detail .title text{
+   color: #F13840;
+}
+.groupBuy_detail .memList{
+  text-align: center;
+  padding: 0 10%;
+  margin: 20rpx 0;
+  
+}
+.groupBuy_detail .memItem{
+  float: left;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+.groupBuy_detail .memItem image{
+  width:100rpx;
+  border-radius: 50%;
+  height: 100rpx;
+}
+.groupBuy_detail .memItem .role{
+  position: absolute;
+  bottom: 10rpx;
+  right: 30%;
+  background: #F13840;
+  color:#fff;
+  font-size: 22rpx;
+  padding: 0 10rpx;
+}
+.groupBuy_detail .btn{
+  width: 60%;
+  margin: 0 auto 60rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  position: relative;
+
+}
+.groupBuy_detail .btn image{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 70rpx;
+}
+.groupBuy_detail .btn button{
+  height: 70rpx;
+  line-height: 70rpx;
+  color:#fff;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: transparent;
+}
+.groupBuy_detail .countdown .time{
+  background: #000;
+  color: #fff;
+  padding: 10rpx 6rpx;
+}
+.intro{
+  padding:3% 5%;
+  font-size: 22rpx;
+  color: #666;
+
+}
+.intro  .title{
+  width: 10%;
+  vertical-align: middle;
+  font-size: 26rpx;
+  text-align: center
+}
+.intro text{
+  vertical-align: middle;
+  line-height: 40rpx;
+  border-left: 4rpx solid #999;
+  display: inline-block;
+  padding-left: 20rpx;
+}
+.banner{
+  background: #fff;
+  width: 100%;
+}
+.banner image{
+   width:100%;
+   height: 360rpx;
+}

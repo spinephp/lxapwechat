@@ -1,0 +1,253 @@
+@import '/pages/template/template.wxss';
+
+/*机构logo和简介*/
+
+.orgInfo {
+  width: 97%;
+  margin: 0 auto 10px;
+  min-height: 300rpx;
+  padding-left: 3%;
+  background: #fff;
+}
+
+.orgInfo .orgLogo {
+  position: relative;
+}
+
+.orgInfo .orgLogo .logo {
+  height: 140rpx;
+  width: 140rpx;
+  position: absolute;
+  top: -30rpx;
+  z-index: 100;
+  -moz-box-shadow: 1px 3px 6px #ccc, -1px 3px 6px #ccc;
+  -webkit-box-shadow: 1px 3px 6px #ccc, -1px 3px 6px #ccc;
+  box-shadow: 1px 3px 6px #ccc, -1px 3px 6px #ccc;
+}
+
+.orgInfo .orgLogo .org_detail {
+  display: inline-block;
+  margin: 10rpx 0;
+  margin-left: 160rpx;
+}
+
+.orgInfo .org_detail .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.orgInfo .org_detail .count {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.orgInfo .org_detail .divider {
+  margin: 0 10rpx;
+}
+
+.orgInfo .box_addr {
+  width: 100%;
+  overflow: hidden;
+  margin: 20rpx 0;
+}
+
+.orgInfo .box_addr .address {
+  width: 80%;
+  float: left;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  /* border-right: 1px solid #ccc;*/
+  padding-right: 20rpx;
+}
+
+.orgInfo .box_addr .address image {
+  display: inline-block;
+  width: 16rpx;
+  height: 22rpx;
+  margin-left: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.orgInfo .box_addr .address text {
+  vertical-align: middle;
+  font-size: 26rpx;
+}
+
+.orgInfo .box_addr .address .dis {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.orgInfo .box_addr .tel {
+  display: block;
+  float: right;
+  margin-top: 24rpx;
+  margin-right: 20rpx;
+  text-align: center;
+}
+
+.orgInfo .box_addr .tel image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.orgInfo .orgBrief {
+  margin-top: 20rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.orgInfo .orgBrief .brief {
+  color: #666;
+  font-size: 24rpx;
+  /*width: 94%;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 40rpx;
+  margin-right: 3%;
+}
+
+.orgInfo .orgBrief .arrow {
+  text-align: center;
+  line-height: 60rpx;
+}
+.orgInfo .orgBrief .arrow image{
+  height: 28rpx;
+  width: 28rpx;
+}
+
+/*选项卡*/
+
+.box{
+  background: #fff;
+}
+
+.box .condition {
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  
+}
+.box .condition view{
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  position: relative;
+}
+.box .condition view image{
+  position: absolute;
+  bottom:0;
+  height: 6rpx;
+  width: 40rpx;
+  left:50%;
+  margin-left: -20rpx;
+  }
+.box .condition view:last-child{
+margin-right:0;
+}
+.box .condition .cur{
+  color:#ffcf00;
+  font-size: 34rpx;
+}
+
+
+.box .box_border {
+
+  margin: -4rpx auto 0;
+  width: 100%;
+  padding-bottom: 10px
+}
+
+.box .box_border .line {
+  height:10rpx;
+  width: 100%;
+  background: #f0f0f0;
+}
+
+/*资质*/
+
+.box .ryzz {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.box .ryzz .title {
+  font-size: 32rpx;
+  line-height: 100rpx;
+  font-weight: normal;
+  padding-left: 3%;
+}
+
+.box .ryzz  .img_list{
+  overflow: hidden;
+}
+
+.box .ryzz  .img_list image{
+  margin-bottom: 10px;
+  float: left;
+  width: 30%;
+  margin-left: 2.5%;
+  height: 140rpx;
+}
+
+
+
+.box  .teacherList .teacherItem {
+  border-bottom: 1px solid #ddd;
+  width: 94%;
+  margin: 0 auto;
+  padding-top: 20rpx;
+  min-height: 180rpx;
+  padding-bottom: 10rpx;
+}
+
+.box .teacherItem .circle {
+  float: left;
+  width: 140rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  overflow: hidden;
+  height:140rpx;
+  margin-top: 20rpx;
+}
+
+
+.box .teacherItem .circle image {
+  width: 100%;
+  height: 140rpx;
+}
+
+.box .teacherItem .detailInfo {
+  float: right;
+  width: 73%;
+}
+
+.box .teacherItem .detailInfo .t_name {
+  font-size: 32rpx;
+  line-height: 60rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.box .teacherItem .detailInfo .count {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.box .teacherItem .detailInfo .divider {
+  margin: 0 10rpx;
+}
+
+.box .teacherItem .detailInfo .brief {
+  color: #999;
+  text-indent: 2px;
+  font-size: 12px;
+  margin-top: 10px;
+}

@@ -1,0 +1,76 @@
+page{
+  background: #e6e6e6;
+}
+.box{
+   padding: 10rpx 3% 0;
+   
+}
+ 
+.item{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+ 
+}
+.item .radio{
+  flex: none;
+  width:10%;
+  text-align: center;
+  line-height: 160rpx;
+  
+  
+}
+.item .redpackage{
+  flex: none;
+  height:160rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 10rpx;
+  background: #ccc;
+  width: 90%;
+}
+.item .cur{
+ background: -webkit-linear-gradient(left, #FB3950, #DE1B41); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #FB3950, #DE1B41); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #FB3950, #DE1B41); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #FB3950, #DE1B41);
+}
+.item .cur .money{
+  color:#ffd200;
+}
+.item .redpackage image{
+  width: 3rpx;
+  height: 100%;
+}
+.item .redpackage .money{
+  width:30%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  }
+.item .redpackage .money text:first-child{
+  padding-top: 20rpx;
+  font-size: 26rpx;
+}
+.item .redpackage .money text:last-child{
+  font-size:48rpx;
+}
+.item .redpackage .illustrate{
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding-left: 30rpx;
+  color:white;
+}
+.item .redpackage .illustrate view:first-child{
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  
+}
+.item .redpackage .illustrate view:last-child{
+  font-size: 26rpx;
+}

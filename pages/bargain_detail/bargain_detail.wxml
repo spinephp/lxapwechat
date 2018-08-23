@@ -1,0 +1,133 @@
+<wxs module="filters" src="bargain_detail.wxs"></wxs>
+<view class="{{showModel?'indexFixed':''}}">
+  <view class="header">
+    <view class="headurl">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{userInfo.avatar_url}}"></image>
+
+    </view>
+    <view class='name'>{{userInfo.nick_name}}</view>
+    <view class="des">我发现了一节好课，一起来砍价0元报班</view>
+    <view class="class_detail item clear">
+      <view class="left">
+        <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{course_info.picurl}}"></image>
+
+      </view>
+      <view class="right">
+        <view class="course_name">{{course_info.name}}</view>
+        <view class="other clear">
+          <view class="price">
+            <text class='active_price'>￥{{course_info.price}}</text>
+            <text class='init_price'>砍价<text>0</text>元拿</text>
+          </view>
+          <view class="distance">
+
+            <image src="/images/pos.png"></image>
+            <text>{{distance}}km</text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="rule" bindtap='showModel'>砍价规则</view>
+    <view class="arrow">
+      <image src="/images/or_arrow_down.png"></image>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="rest">已砍
+      <text>{{disPrice}}</text>元，还差
+      <text>{{curProcessCourse.current_price}}</text>元(仅限{{curProcessCourse.bargain_people_count}}名)</view>
+    <view class="process clear">
+      <view class='left'>
+        <view>原价：</view>
+        <view>{{curProcessCourse.course_price}}</view>
+      </view>
+
+      <view class='middle'>
+        <view class="pro_line" style="width:{{process_width}}"></view>
+      </view>
+
+      <view class='right'>
+        <view>底价：</view>
+        <view>0</view>
+      </view>
+
+    </view>
+    <view class="btn" hidden='{{expire}}'>
+      <button open-type='share'>邀请好友来砍价</button>
+      <image src="/images/bargainBtn.png"></image>
+    </view>
+    <view class="time">还剩
+      <text>{{countDownDay}}天{{countDownHour}}:{{countDownMinute}}:{{countDownSecond}}</text>过期，赶紧呼唤朋友来砍价吧</view>
+    <view class="bargain_info">
+      <view class="title" bindtap="change">
+        <text class="{{curIndex==0?'cur':''}}" data-index="0">砍价排行</text>
+        <text class="{{curIndex==1?'cur':''}}" data-index="1">好友帮</text>
+      </view>
+      <view class='bargain_list grade' hidden="{{curIndex!=0}}">
+        <view class="bargain_item" wx:for="{{gradeList}}" wx:key="key" wx:for-item="item">
+          <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}"></image>
+          <text class="name">{{item.nick_name}}</text>
+          <text class="price">已砍{{filters.toFix(item.course_price-item.current_price)}}元</text>
+          <text class='time'>{{filters.toDate(item.update_time)}}</text>
+        </view>
+
+      </view>
+      <view class='bargain_list friend' hidden="{{curIndex!=1}}">
+        <view class="bargain_item" wx:for="{{friendList}}" wx:key="key">
+          <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}"></image>
+          <text class="name">{{item.nick_name}}</text>
+          <text class="price">帮砍{{item.bargain_price}}元</text>
+          <text class='time'>{{filters.toDate(item.created_time)}}</text>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+  <view class="banner">
+    <image src="/images/lexiang.png"></image>
+  </view>
+</view>
+<view hidden='{{!showModel}}'>
+  <view class="mask">
+  </view>
+  <view class="model">
+    <view class='rule'>
+      <view class="title">砍价规则</view>
+      <image src='/images/mask.png'></image>
+      <scroll-view scroll-y="true" class='con'>
+        <view>
+          <text class='circle'></text>
+          <text class="txt">为感谢广大消费者对乐享A+的支持，消费者可以通过参与砍价活动获得课程，在砍价过程中我们不会有任何支付行为，砍价获得商品后，我们会有客服与您联系，请广大消费者放心参与。</text>
+        </view>
+        <view>
+          <text class='circle'></text>
+          <text class="txt">分享到群聊，邀请更多好友帮你砍价，每位好友只能砍一次！</text>
+        </view>
+
+        <view>
+          <text class='circle'></text>
+          <text class="txt">活动截止日砍价最多的五人为砍价成功用户，付款时直接减掉砍价总和，在我的砍价中付款购买课程。</text>
+        </view>
+        <view>
+          <text class='circle'></text>
+          <text class="txt">如果用户存在违规行为（包括但不限于虚假交易，作弊），平台将封禁用户的活动资格，并有权撤销相关违规交易、收回用户活动权益，同时依照相关规则进行处罚。</text>
+        </view>
+        <view>
+          <text class='circle'></text>
+          <text class="txt">如出现不可抗力或情势变更的情况（包括但不限于重大灾害事件、活动受政府机关指令需要停止运营或调整的、活动遭受严重网络攻击或因系统故障需要暂停运营的），则乐享A+官方可依相关法律法规的规定主张免责！</text>
+        </view>
+        <view>
+          <text class='circle'></text>
+          <text class="txt">如有问题，可联系乐享A+官方客服，活动最终解释权由乐享A+平台所属官方公司所有。</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='cancel'>
+      <image src="/images/cancel.png" bindtap='hideModel'></image>
+    </view>
+  </view>
+</view>

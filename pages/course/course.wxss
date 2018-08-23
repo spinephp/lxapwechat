@@ -1,0 +1,60 @@
+
+
+.content{
+  height: 100%;
+}
+.left{
+  float:left;
+  width: 30%;
+  text-align: center;
+  overflow-y: auto;
+  
+}
+.left .scroll-view-item{
+  height:76rpx;
+  line-height: 76rpx;
+  background: #f2f2f2;
+  color: #666;
+  font-size: 28rpx;
+}
+.left .cur{
+  background: #fff;
+  border-left: 6rpx solid #FE7E35;
+}
+.right{
+  float: right;
+  width: 64%;
+  margin-right: 3%;
+  
+
+}
+.right .banner image{
+  width: 100%;
+  height: 200rpx;
+}
+.right .title{
+  margin: 40rpx 0;
+}
+
+.right .course-item{
+  float:left;
+  width: 47%;
+  margin-bottom: 40rpx;
+  
+}
+.right .course-item:nth-child(odd){
+  margin-right:6%; 
+}
+.right .course-item image{
+  width: 100%;
+  height: 120rpx
+}
+.right .course-item view{
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  width: 95%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

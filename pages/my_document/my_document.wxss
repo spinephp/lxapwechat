@@ -1,0 +1,36 @@
+/* pages/my_document/my_document.wxss */
+.mydoc{
+  padding: 20rpx 3% 0;
+  margin: 20rpx;
+  border: 1px solid #ddd;
+  border-radius:16rpx;
+}
+
+.mydoc view{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  line-height: 70rpx;
+  border-bottom: 1px solid #eee;
+  color: #aaa;
+}
+
+.mydoc .left{
+  width:150rpx;
+  text-align: left;
+  color: black;
+}
+
+.mydoc .right{
+  text-align: right;
+  color: #aaa;
+  font-size: smaller;
+  line-height: 30rpx;
+  padding: 10rpx;
+}
+
+.mydoc image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 15rpx;
+}

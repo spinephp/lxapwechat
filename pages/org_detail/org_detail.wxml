@@ -1,0 +1,92 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <template is="swiper" data="{{imgUrls}}"></template>
+  <view class="orgInfo">
+    <view class="orgLogo">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{org_info.logourl}}" alt="" class="logo"></image>
+      <view class="org_detail">
+        <view class="title">{{org_info.name}}</view>
+        <view class='count'>
+          <text>课程数 {{list.length}}</text>
+          <text class="divider">|</text>
+          <text>学生数 {{org_info.count==null?0:org_info.count}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="box_addr clear">
+      <view class="address" bindtap='goThere' data-latitude="{{org_info.latitude}}" data-longitude="{{org_info.longitude}}">
+        <text>地址：{{org_info.address}}</text>
+        <image src="/images/pos.png"></image>
+        <text class='dis'>{{distance}}km</text>
+      </view>
+      <view class="tel" style='margin-top:{{mTop}}' bindtap='callme' data-phone='{{org_info.phone}}'>
+        <image src="/images/tel.gif"></image>
+      </view>
+
+    </view>
+    <view class="orgBrief">
+      <view class="brief" style="{{stretch==true?'overflow: hidden;text-overflow: ellipsis;white-space: nowrap':'text-overflow: inherit;white-space: inherit;overflow: visible'}}">{{org_info.introduce}}</view>
+      <view style="text-align: center" class="arrow" bindtap='stretch'>
+        <image src="{{stretch==true?'/images/arrow_down.png':'/images/arrow_up.png'}}"></image>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="condition clear">
+      <view class="{{curIndex==1?'cur':''}}" data-current="1" catchtap='chagneShow'>课程({{list.length}})
+        <image hidden="{{curIndex==1?false:true}}" src="/images/boder_bottom.png"></image>
+      </view>
+      <view class="{{curIndex==2?'cur':''}}" data-current="2" catchtap='chagneShow'>资质
+      <image hidden="{{curIndex==2?false:true}}" src="/images/boder_bottom.png"></image></view>
+      <view class="{{curIndex==3?'cur':''}}" data-current="3" catchtap='chagneShow'>老师({{teacher_list.length}})
+      <image hidden="{{curIndex==3?false:true}}" src="/images/boder_bottom.png"></image></view>
+    </view>
+    <view hidden="{{curIndex==1?false:true}}" class="box_border">
+      <template is="list" data="{{list}}"></template>
+    </view>
+    <view hidden="{{curIndex==2?false:true}}" class="box_border">
+      <view class="ryzz" hidden="{{hardwareList.length==0}}">
+        <view class='title'>硬件设施</view>
+        <view style="border-bottom: none;" class="img_list clear">
+          <image bindtap="prevImg" data-list="{{hardwareList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{hardwareList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}"></image>
+          
+        </view>
+      </view>
+      <view class="line clear" hidden="{{hardwareList.length==0 || honorList.length==0}}"></view>
+      <view class="ryzz" hidden="{{honorList.length==0}}">
+        <view class='title'>荣誉资质</view>
+        <view class="img_list clear">
+          <image bindtap="prevImg" data-list="{{honorList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{honorList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}"></image>
+        </view>
+      </view>
+    </view>
+
+
+    <view hidden="{{curIndex==3?false:true}}" class="box_border">
+      <view class="teacherList">
+        <view class="teacherItem clear" wx:for="{{teacher_list}}" wx:for-item="item">
+          <view class="circle">
+            <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.headurl}}"></image>
+          </view>
+          <view class="detailInfo">
+            <view class='t_name'>{{item.name}}</view>
+            <view class='count'>
+              <text>课程数 {{item.courseNum}}</text>
+              <text class="divider">|</text>
+              <text>学生数 {{item.studentNum}}</text>
+            </view>
+            <view class="brief">{{item.introduce}}</view>
+          </view>
+        </view>
+      </view>
+
+
+
+
+    </view>
+
+
+  </view>
+</view>

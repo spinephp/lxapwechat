@@ -1,0 +1,51 @@
+/* pages/message/message.wxss */
+page{
+  width:98%;
+  height:100%;
+  border: 6rpx solid black;
+}
+.tags{
+  width:98%;
+  height: 100%;
+  padding: 10rpx 0 0 5rpx;
+}
+.tag-box{
+  width:98%;
+  display: flex;
+  font-size: 24rpx;
+  padding: 0 0 0 10rpx;
+}
+.list-item{
+  width:98%;
+  height:152rpx;
+  border-bottom: 1px solid #ccc;
+  padding:36rpx 26rpx 0rpx 30rpx;
+}
+.list-item image{
+  float:left;
+  width:76rpx;
+  height:76rpx;
+  margin-right: 30rpx;
+}
+.list-item .top{
+  width:540rpx;
+   display: inline-flex;
+   flex-direction: row;
+  justify-content:space-between;
+}
+.list-item .top .title{
+  font-size:30rpx; 
+  color:orange;
+}
+.list-item .top .date{
+  align-self: flex-end;
+}
+.list-item .context{
+  width:540rpx;
+  float:left;
+  text-align: left;
+  margin-top: 10rpx;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+}

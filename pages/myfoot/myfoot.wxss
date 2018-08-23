@@ -1,0 +1,2 @@
+/* pages/myfoot/myfoot.wxss */
+@import '/pages/template/template.wxss';

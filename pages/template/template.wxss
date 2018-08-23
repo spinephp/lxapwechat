@@ -1,0 +1,386 @@
+swiper, swiper-item, image {
+  width: 100%;
+  height: 300rpx;
+}
+.list {
+  padding: 0 2%;
+}
+
+.list .item {
+  margin: 30rpx auto;
+}
+
+.dateLabel{
+  margin-bottom: 20rpx;
+}
+
+.list .left {
+  width: 43%;
+  float: left;
+}
+
+.list .right {
+  width: 53%;
+  float: right;
+  color: #999;
+}
+
+.list .left image {
+  width: 100%;
+  height: 160rpx;
+}
+
+.list .right .course_name{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.list .right .course_name .c_name {
+  float: left;
+  font-size: 28rpx;
+  font-weight: bold;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.list .right .distance {
+  font-size: 22rpx;
+}
+
+.list .right .other {
+ 
+ height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  width: 100%;
+}
+
+
+.list .right .org_name {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+   height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list .other .org_name, .list .other .price, .list .other .expiretime {
+  float: left;
+}
+
+.list .distance, .list .other .apply, .list .other .btn {
+  float: right;
+}
+
+.list .distance image {
+  width: 16rpx;
+  height: 21rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.list .distance text {
+  vertical-align: middle;
+}
+
+.list .other .btn {
+  padding: 0 20rpx;
+  text-align: center;
+  background: #fb0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  margin-top: 7rpx;
+  color: #fff;
+}
+
+.list .other .expiretime {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.list .other .active_price {
+  color: #fc7e53;
+  font-size: 28rpx;
+}
+
+.list .other .init_price {
+  margin-left: 30rpx;
+  text-decoration: line-through;
+  font-size: 24rpx;
+}
+
+.list .other .apply {
+  font-size: 24rpx;
+}
+.list .other .apply .joinBtn{
+  padding: 0 30rpx;
+  line-height: 65rpx;
+  background: #5493FA;
+  font-size:32rpx;
+  color:#fff;
+  border-radius: 10rpx;
+  margin-top: -20rpx
+
+}
+
+.org_list {
+  padding: 0 2%;
+  
+
+}
+
+.org_list .item {
+  border-bottom: 1px solid #ddd;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.org_list .left {
+  width: 25%;
+  float: left;
+}
+
+.org_list .right {
+  width: 70%;
+  float: right;
+  color: #999;
+}
+
+.org_list .left image {
+  width: 100%;
+  height: 160rpx;
+}
+
+.org_list .org_name, .org_list .org_addr {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.org_list .org_name {
+  font-size: 30rpx;
+  color: #000;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.org_list .org_name .chain {
+  color: #fff;
+  float: right;
+  font-size: 24rpx;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: #59ccfe;
+  background: -webkit-linear-gradient(left, #59ccfe, #249af7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #59ccfe, #249af7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #59ccfe, #249af7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, #59ccfe, #249af7); /* Standard syntax */
+}
+
+.org_list .org_addr {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.org_list .distance {
+  float: left;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.org_list .apply {
+  float: right;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+
+.org_list .distance image {
+  display: inline-block;
+  width: 18rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.org_list .distance text {
+  vertical-align: middle;
+  font-size: 24rpx;
+}
+
+.title_row{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  font-size:smaller;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.listex {
+  padding: 0 2%;
+  margin: 0;
+}
+.listex navigator{
+  margin-top: 20rpx;
+  margin-bottom: 100rpx;
+}
+
+.listex .item {
+  margin: 30rpx auto;
+}
+
+.dateLabel{
+  margin-bottom: 20rpx;
+}
+
+.listex .left {
+  width: 43%;
+  float: left;
+}
+
+.listex .right {
+  width: 53%;
+  float: right;
+  color: #999;
+}
+
+.listex .left image {
+  width: 100%;
+  height: 160rpx;
+}
+
+.listex .right .course_name{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.listex .right .course_name .c_name {
+  float: left;
+  font-size: 28rpx;
+  font-weight: bold;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.listex .right .distance {
+  font-size: 22rpx;
+}
+
+.listex .right .other {
+ 
+ height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+
+.listex .right .org_name {
+  font-size: 26rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+   height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listex .other .org_name, .listex .other .price, .listex .other .expiretime {
+}
+
+.listex .distance, .listex .other .apply, .listex .other .btn {
+  float: right;
+}
+
+.listex .distance image {
+  width: 16rpx;
+  height: 21rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.listex .distance text {
+  vertical-align: middle;
+}
+
+.listex .other .btn {
+  padding: 0 20rpx;
+  text-align: center;
+  background: #fb0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  margin-top: 7rpx;
+  color: #fff;
+}
+
+.listex .other .expiretime {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.listex .other .active_price {
+  color: #fc7e53;
+  font-size: 28rpx;
+}
+
+.listex .other .init_price_title {
+  margin-left: 0rpx;
+  font-size: 24rpx;
+}
+
+.listex .other .init_price {
+  margin-left: 0rpx;
+  text-decoration: line-through;
+  font-size: 24rpx;
+}
+
+.listex .other .apply {
+  margin-top:-70rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  background: #5493FA;
+  color:#fff;
+  border-radius: 10rpx;
+}
+.listex .other .apply .joinBtn{
+  padding: 0 30rpx;
+  line-height: 65rpx;
+  font-size:32rpx;
+   margin-top: -20rpx
+
+}
+.listex .bottom{
+  width:100%;
+  height:10rpx;
+  background-color: #eee;
+  clear: both;
+  margin-top:40rpx;
+}
+
+.hide{
+  display: none;
+  height: 0;
+}

@@ -1,0 +1,78 @@
+<view class="container">
+  
+  <view class="originator item clear">
+    <view class="left">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{userInfo.avatar_url}}"></image>
+      
+    </view>
+    <view class="right">
+      <view class="org_addr">{{userInfo.nick_name}}</view>
+      <view class="clear"></view>
+      <view class="other clear">
+        <view class='distance'>
+          发起
+          <text>{{course_info.groupBuyingCourse.group_people_count}}人</text>团购
+        </view>
+        <view class="apply">
+          <text>{{processData.start_time}}开团</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="class_detail item clear">
+      <view class="left">
+        <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{course_info.picurl}}"></image>
+      </view>
+      <view class="right">
+        <view class="course_name">{{course_info.name}}</view>
+        <view class="other clear">
+          <view class="price">
+            <text class="title">团购价</text>
+            <text class='active_price'>￥{{course_info.groupBuyingCourse.group_price}}</text>
+            <text class='init_price'>￥{{course_info.price}}</text>
+          </view>
+          <view class="distance">
+
+            <image src="/images/pos.png"></image>
+            <text>{{distance}}km</text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="groupBuy_detail">
+      <view class="title">邀请
+        <text>{{processData.group_people_count-processData.current_people_count}}</text>位好友，团满即可拼团成功</view>
+      <view class="memList clear">
+        <view class="memItem" wx:for="{{memList}}" wx:key="key">
+         <image src='https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}'></image>
+         
+          <view class='role' hidden="{{item.is_header!=1}}">团长</view>
+        </view>
+      </view>
+
+      <view class="btn"><image src="/images/groupBuyBtn.png"></image><button open-type="share">邀请好友</button></view>
+      <view class="countdown">
+        <text style="margin-right:20rpx;">剩余</text>
+        <text class="time">{{countDownDay}}</text>天
+        <text class="time">{{countDownHour}}</text>：
+        <text class="time">{{countDownMinute}}</text>：
+        <text class="time">{{countDownSecond}}</text>
+        <text style="margin-left:20rpx;">结束</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="intro">
+    <view style='display:inline-block' class="title">拼团玩法</view>
+    <text>选择商品开团>支付开团或参团>邀请好友参团>人满成团</text>
+  </view>
+  <view class="banner">
+    <image src='/images/lexiang.png' ></image>
+  </view>
+
+
+</view>

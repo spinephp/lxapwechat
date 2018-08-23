@@ -1,0 +1,171 @@
+.box{
+  padding: 3%;
+}
+.box .item{
+  border-bottom: 1rpx solid #eee;
+  line-height: 100rpx;
+  padding: 0 5%;
+
+}
+.item image{
+  height: 42rpx;
+  width:30rpx;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+.item image.name{
+  width: 36rpx;
+  height: 38rpx;
+}
+.item input{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30rpx;
+  color: #666;
+  width: 60%;
+}
+.item .place{
+  color:#bcbcbc;
+}
+
+.class_detail {
+  padding: 20rpx 3% 10rpx;
+  color: #666;
+  background: #fff;
+  margin: 30rpx 0;
+}
+
+.class_detail .left {
+  width: 32%;
+  float: left;
+}
+
+.class_detail .right {
+  width: 65%;
+  float: right;
+  color: #666;
+}
+
+.class_detail .left image {
+  width: 100%;
+  height: 120rpx;
+}
+
+
+.class_detail .right .course_name{
+  height: 50rpx;
+  line-height: 50rpx;
+  
+}
+
+.class_detail .right .c_name {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 15rpx;
+  float: left;
+}
+.class_detail .distance {
+  float: right;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.class_detail .distance image {
+  width: 18rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.class_detail .distance text {
+  vertical-align: middle;
+  font-size: 24rpx;
+  color: #999;
+}
+.class_detail .right .org_name{
+   margin-bottom: 15rpx;
+}
+
+.class_detail .right .other {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  width: 100%;
+}
+
+.class_detail .other .title {
+  font-size: 24rpx;
+}
+
+.class_detail .other .active_price {
+  color: #F10804;
+  font-size: 28rpx;
+  margin: 0 10rpx;
+}
+
+.class_detail .other .init_price {
+  color: #666;
+  font-size: 24rpx;
+  text-decoration:line-through;
+
+}
+.class_detail .other .init_price text{
+  color: #F10804;
+}
+.img image{
+  width: 100%;
+  height: 10rpx;
+}
+.coupons{
+  margin-top: 20rpx;
+}
+.coupons .couponsIcon{
+  width:40rpx;
+  height:30rpx;
+}
+.coupons text{
+  color:#bcbcbc;
+  font-size: 30rpx;
+  vertical-align: middle
+}
+.coupons image{
+  vertical-align: middle;
+}
+
+.coupons .right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.coupons .right text{
+  color:#F10804;
+  font-size: 26rpx;
+}
+.coupons .right image{
+  height: 26rpx;
+  width: 26rpx;
+  margin-left: 10rpx;
+}
+.submitBtn{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 100%;
+  
+  text-align: center;
+  font-size: 28rpx;
+ 
+}
+.submitBtn button{
+ background: #5493FA; 
+ color: #fff;
+}
+
+

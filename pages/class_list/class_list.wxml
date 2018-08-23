@@ -1,0 +1,49 @@
+<import src="/pages/template/template.wxml" />
+
+
+<view>
+  <view class="header">
+    <view class='search'>
+      <image src="/images/search_icon.png"></image>
+      <input placeholder='搜索附近课程' bindconfirm="change" value="{{keyword}}"></input>
+    </view>
+    <view class="tag" bindtap='order_load'>
+      <view data-type="distance" class="{{order=='distance'?'cur':''}}">距离最近</view>
+      <view data-type="sale" class="{{order=='sale'?'cur':''}}">销量最高</view>
+      <view data-type="stars" class="{{order=='stars'?'cur':''}}">评分最高</view>
+      <view catchtap='filter'>
+        <text>筛选</text>
+        <image src="/images/filter.png"></image>
+      </view>
+    </view>
+  </view>
+  <view style="background:#fff;margin-top:244rpx;">
+    <template is="list" data="{{list}}"></template>
+  </view>
+
+</view>
+<view class="prompt" hidden="{{!is_show}}" catchtouchmove="move_scroll" bindtap='hide_mask' id='prompt'>
+  <view class="mask">
+    <view class="course_type">
+      <view class="title">课程分类</view>
+      <view class='clear c_type'>
+      <scroll-view scroll-y="true" style="height: 600rpx">
+        <view class="{{(index+1)%3==0?'no_margin':''}} {{index==cur_type?'cur_type':''}} {{item.value==cur_val?'cur_type':''}}" wx:for="{{type_list}}" data-id="{{item.value}}" data-index="{{index}}" wx:for-index="index" wx:for-item="item" catchtap='change_type' wx:key="key">{{item.text}}</view>
+        </scroll-view>
+
+      </view>
+    </view>
+    <view class="course_price">
+      <view class="title">价格区间（元）</view>
+      <view class="write">
+        <input placeholder='最低价' value="{{min_price}}" bindinput="minInput" type="number"></input>
+        <text>--</text>
+        <input placeholder='最高价' value="{{max_price}}" bindinput="maxInput" type="number"></input>
+      </view>
+    </view>
+    <view class='btn'>
+      <text class="reset" catchtap='reset'>重置</text>
+      <text class="sure" catchtap='sure'>确定</text>
+    </view>
+  </view>
+</view>

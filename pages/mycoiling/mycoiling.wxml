@@ -1,0 +1,21 @@
+<!--pages/mycoiling/mycoiling.wxml-->
+<!--导航条--> 
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+</view> 
+  
+<!--红包--> 
+<view hidden="{{currentTab!==0}}">
+  <view class='redpackage' wx:for="{{list}}"  wx:key='this' data-index='{{index}}' catchtap='clickReadPackage'>
+    <view class='money'><text>￥</text><text>{{item.preferential_amount}}.00</text></view>
+    <view class='illustrate'><view>{{item.title || "平台通用红包"}}</view><view>{{item.introduce || ''}}</view></view>
+  </view>
+</view> 
+  
+<!--试听卷--> 
+<view hidden="{{currentTab!==1}}"> 
+  <view class='auditions' wx:for="{{list1}}"  wx:key='this' data-index='{{index}}' catchtap='clickAuditions'>
+    <view class='money'><text>{{item.type=='auditions'? "试听券":""}}</text></view>
+    <view class='illustrate'><view><text>机构：</text><text>{{item.org_name || '平台通用券'}}</text></view><view>使用范围：{{item.introduce || '任意课程'}}</view></view>
+  </view>
+</view> 

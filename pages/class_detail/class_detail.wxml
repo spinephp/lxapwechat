@@ -1,0 +1,319 @@
+<import src="/pages/template/template.wxml" />
+<wxs module="filters" src="class_detail.wxs"></wxs>
+<view class="all">
+  <view class="chooseList" bindtap="change_type">
+    <view class="{{is_active==1?'cur':''}}" data-type="1">
+      <text data-type="1">详情</text>
+    </view>
+    <view class="{{is_active==2?'cur':''}}" data-type="2">
+      <text data-type="2">评价</text>
+    </view>
+    <view class="{{is_active==3?'cur':''}}" data-type="3">
+      <text data-type="3">相关课程</text>
+    </view>
+
+  </view>
+  <view style="margin-top:80rpx">
+    <view class="detail" hidden="{{is_active!=1}}">
+      <view>
+        <template is="swiper" data="{{imgUrls}}"></template>
+      </view>
+      <view class="course_summary">
+        <view hidden="{{active_type=='normal'}}">
+          <view class="active {{active_type=='activity'?'activity':active_type=='bargain'?'bargain':'groupBuy'}}">
+            <view class='dis_price'>
+              <image src="{{active_type=='activity'?'/images/active_icon.png':active_type=='bargain'?'/images/bargain_icon.png':'/images/group_icon.png'}}"></image>
+              <text class="active_price">￥{{active_price}}</text>
+              <text class="store_price">￥{{course_info.store_price}}</text>
+            </view>
+            <view class='countdown'>
+              <view class="text">距结束还剩</view>
+              <view class='time'>
+
+                <text class="bg_color">{{countDownDay}}</text>
+                <text class="separator">天</text>
+                <text class="bg_color">{{countDownHour}}</text>
+                <text>：</text>
+                <text class="bg_color">{{countDownMinute}}</text>
+                <text>：</text>
+                <text class="bg_color">{{countDownSecond}}</text>
+              </view>
+            </view>
+
+
+          </view>
+        </view>
+        <view class="summary">
+          <view class="title clear">
+            <view class='name'>{{course_info.name}}</view>
+            <view class="collect" wx:if="{{isCollected==false}}" bindtap='collect'>
+              <image src='/images/no_collect.png'></image>
+              <view>收藏</view>
+            </view>
+            <view class="collect" wx:else bindtap='cancel_collect'>
+              <image src='/images/is_collect.png'></image>
+              <view>已收藏</view>
+            </view>
+          </view>
+          <view class="date clear">
+            <view class="class_count">课次：{{course_info.class_count}}讲</view>
+            <!--<view class="class_date">{{course_info.name}}</view>-->
+          </view>
+
+        </view>
+        <view class="price clear" hidden="{{active_type!='normal'}}">
+          <view class='course_price'>
+            <text class='active_price'>￥{{course_info.price}}</text>
+            <text class='init_price'>￥{{course_info.store_price}}</text>
+          </view>
+          <view class='distance'>
+            <image src='/images/pos.png'></image>
+            <text>{{filters.toFix(org_info.distance)}}km</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="groupList" hidden="{{active_type!='group_buying' && groupList.length==0}}">
+        <view class="groupItem clear" wx:for="{{groupList}}" wx:for-item="item" wx:key="key">
+
+          <view class="groupLeft">
+            <image src='https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}'></image>
+            <text>{{item.nick_name}}</text>
+          </view>
+          <view class="groupRight">
+            <view class="surplus">
+              <view class="count">还差
+                <text>{{item.group_people_count-item.current_people_count}}人</text>成团</view>
+              <view class="date">剩余{{item.difftime}}</view>
+            </view>
+            <view class="btn">
+              <navigator url="/pages/groupBuy_detail_share/groupBuy_detail_share?courseId={{item.course_id}}&orderNo={{item.order_no}}">去参团</navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="service_des">
+        <view class="title clear">
+          <view>服务说明</view>
+          <view class="changeArrow" bindtap='stretch'>
+            <image src="{{stretch==true?'/images/arrow_down.png':'/images/arrow_up.png'}}"></image>
+          </view>
+
+        </view>
+        <view class="service_list" hidden='{{stretch==true}}'>
+          <view>
+            <image src="/images/fw@2x.png" />
+            <text>购买课程后可直接至线下机构进行上课。</text>
+          </view>
+          <view>
+            <image src="/images/fw@2x.png" />
+            <text>未使用的订单支持退款，平台将收取退款金额0.4%的手续费。</text>
+          </view>
+          <view>
+            <image src="/images/fw@2x.png" />
+            <text>试听课，优惠劵，代金劵不支持退款服务。</text>
+          </view>
+          <view>
+            <image src="/images/fw@2x.png" />
+            <text>在课程进行中选择退款，可通过机构进行退款服务。</text>
+          </view>
+        </view>
+      </view>
+      <view class="teacher_dec">
+        <view class="title">老师介绍</view>
+        <view class="ter">
+          <image src="/images/tea_bg.png" class="bg"></image>
+          <view class="photo">
+            <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{teacher.headurl}}" />
+            <text>{{teacher.name}}</text>
+          </view>
+          <view class="teacher_brief">{{teacher.introduce}}</view>
+        </view>
+      </view>
+      <view class="org">
+        <navigator url="/pages/org_detail/org_detail?id={{org_info.id}}">
+          <view class="title clear">
+            <view>机构介绍</view>
+            <image src="/images/arrow_r.png" />
+          </view>
+          <view class="org_info clear">
+            <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{org_info.logourl}}" />
+            <view class="org_name">
+              <view class="name">{{org_info.name}}</view>
+              <view class="clear count">
+                <view style="float:left;margin-right:20rpx;">
+                  <view>{{org_info.courseNum}}</view>
+                  <view>课程数</view>
+                </view>
+
+                <view style="float:left;">
+                  <view style="text-align:cneter">{{org_info.studentNum}}</view>
+                  <view>学生数</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="org_brief">{{filters.intro(org_info.introduce)}}</view>
+        </navigator>
+      </view>
+
+      <view class="sign_up" hidden='{{studentList.length==0}}'>
+        <view class="title">
+          <view class="all_count">已报名
+            <text>({{studentList.length}})</text>
+          </view>
+        </view>
+        <view class="cosur clear">
+          <scroll-view scroll-x>
+            <view class="cosur3" wx:for="{{studentList}}" wx:for-item="item" wx:key="key">
+              <image src='https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}'></image>
+              <view class="user_name">{{item.nick_name}}</view>
+              <view class="everyCount" wx:if="{{item.count!=1}}">x{{item.count}}</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+
+      <view class='more_info'>
+
+        <view class="intr">课程详情</view>
+        <view class="intr1">
+
+          <view class="info_body" wx:for="{{image_text}}" wx:for-index="index" wx:for-item="item" wx:key="key">
+
+
+            <view class="intr2" wx:if="{{item.type==0 && index%2==0}}">
+              <view class="h6">{{item.title}}</view>
+              <view class="intr3">
+                <view class="ring1">
+                  <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.file_name}}"></image>
+                </view>
+                <view class="p">{{item.content}}</view>
+              </view>
+            </view>
+
+
+            <view class="intr2" wx:elif="{{item.type==0 && index%2!=0}}">
+              <view class="h6">{{item.title}}</view>
+              <view class="intr3_1">
+                <view class="ring">
+                  <image id="intr2" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.file_name}}" />
+                </view>
+                <view class='p'>{{item.content}}</view>
+              </view>
+            </view>
+
+
+            <view wx:elif="{{item.type==1}}">
+              <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.file_name}}"></image>
+            </view>
+
+            <view class="vid" style="margin-top: 20px" wx:elif="{{item.type==2}}">
+              <video id="my-video" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.file_name}}" style="width: 100%;height: 190px" controls></video>
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="evalution " hidden="{{is_active!=2}}">
+      <view id="a9">
+        <!--<view class="a9_top ">
+          <view class="a9_l " id="eva_top ">
+            <text class="h2">综合评分:</text>
+            <view class="h3">
+              <image src="/images/star.png" />
+              
+            </view>
+            <text class="h1">5</text>
+
+          </view>
+        </view>-->
+        <view class="jump_eva ">
+          <view class="title clear">
+            <view class="all_count">已评价
+              <text>({{evaluationList.length}})</text>
+            </view>
+          </view>
+
+        </view>
+        <view class="a9_r " id="eva_type " bindtap='change_eva'>
+          <view class="{{cur_index==0?'cu':''}}" data-type="0 ">全部</view>
+          <view class="{{cur_index==1?'cu':''}}" data-type="1 ">好评</view>
+          <view class="{{cur_index==2?'cu':''}}" data-type="2 ">中评</view>
+          <view class="{{cur_index==3?'cu':''}}" data-type="3 ">差评</view>
+
+        </view>
+        <view id="conDrop " style="padding-bottom: 60px">
+          <view class="a9_main " id="dropLoad ">
+            <view class="a9_d clear" wx:for="{{curEvaList}}" wx:for-item="item" wx:key="key">
+              <view class="i">
+                <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.avatar_url}}" />
+              </view>
+              <view class="a9_detail">
+                <view class="tai1">
+                  <view class="h4">{{item.nick_name}}</view>
+                  <view class="h3">{{filters.dateFormat(item.created_time)}}</view>
+                </view>
+                <view class="tai2">评分：
+                  <image src="/images/star.png" wx:for="{{item.stars}}" wx:key="key" />
+                </view>
+                <view class="m">{{item.content}}</view>
+                <view class="tai3">
+
+                  <image bindtap="prevImg" data-list="{{item.pictureList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img}}" wx:for="{{honorList}}" wx:for-item="img" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img.path}}" wx:key="key"></image>
+                </view>
+                <view class="tai4" wx:for="{{item.organizationEvaluationList}}" wx:for-item="org_answer" wx:key="key">
+                  <image src="/images/dup.png" />
+                  <view class="p">
+                    <text style="color:#666">机构回复：</text>{{org_answer.content}}</view>
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="re_courese " hidden="{{is_active!=3}}">
+
+      <view style="background:#fff;">
+        <template is="list" data="{{list}}"></template>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="bottom">
+  <view class='img_view float border-left'>
+
+    <!--<view bindtap='callme'>联系客服</view>-->
+    <button class="cs_button" open-type="contact" session-from="weapp">
+      <image src="/images/concat.png"></image>
+      <view>联系客服</view>
+    </button>
+  </view>
+  <view class='img_view float'>
+    <navigator url="/pages/audition/audition?courseId={{course_id}}">
+      <image src="/images/free_listen.png"></image>
+      <view>试听</view>
+    </navigator>
+  </view>
+
+  <view class="float buy" hidden="{{active_type=='activity'}}" style="width:{{active_type=='normal'?'68%':'34%'}}">
+    <navigator url="/pages/pay/pay?courseId={{course_id}}&type=normal&activeId=''">立即报名 ￥{{course_info.price}}</navigator>
+  </view>
+  <view class="float active" hidden="{{active_type!='activity'}}" style="width:68%">
+    <navigator url="/pages/pay/pay?courseId={{course_id}}&type=activity&activeId={{course_info.activityCourse.id}}">参加活动 ￥{{active_price}}</navigator>
+  </view>
+  <view class="float bargain" hidden="{{active_type!='bargain'}}">
+    <navigator url="/pages/bargain_detail/bargain_detail?courseId={{course_info.id}}">我要砍价 ￥0</navigator>
+  </view>
+  <view class="float groupBuy" hidden="{{active_type!='group_buying'}}">
+    <!--<navigator url="/pages/groupBuy_detail/groupBuy_detail?id={{course_info.id}}">我要拼团 ￥{{active_price}}</navigator>-->
+    <navigator url="/pages/pay/pay?courseId={{course_id}}&type=group_buying&activeId={{course_info.groupBuyingCourse.id}}&state=1">我要拼团 ￥{{active_price}}</navigator>
+  </view>
+
+</view>

@@ -1,0 +1,21 @@
+<!--pages/myevaluating/myevaluating.wxml-->
+<view>
+  <view class="top" bindtap='nonestarclick'>
+    <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{picurl}}"></image>
+    <text class="c_name">{{name}}</text>
+    <view class="container">
+      <image wx:for="{{stars}}" src="/images/{{selectedstars>index? 'star.png':'no_collect.png'}}" data-id="{{index}}" bindtap='starclick'/>
+    </view>
+  </view>
+  <view class="content">
+    <textarea  bindinput="bindinput" placeholder="课程满足你的期待吗？说说它的优点和美中不足的地方吧？" />
+    <view class='imagesview'>
+      <view wx:for="{{images}}" class='imgview'>
+        <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" />
+        <image src="/images/delete@2x.png" class='delete' bindtap='deleteImage' data-id="{{index}}"></image>
+      </view>
+      <image src="/images/addimage@2x.png" bindtap='addimage'/>
+    </view>
+  </view>
+</view>
+<view class='footer' bindtap='evalsubmit'>提交</view>

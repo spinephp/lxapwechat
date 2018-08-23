@@ -1,0 +1,74 @@
+@import '/pages/template/template.wxss';
+.header{
+  background: #fff;
+  padding-top: 40rpx;
+  padding-bottom: 30rpx;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 9999;  
+
+}
+.search {
+  width: 90%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  position: relative;
+  background:#F2F2F2;
+  line-height: 60rpx;
+  margin: 0 auto;
+  
+ 
+}
+
+.search image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+}
+.search input{
+  position: absolute;
+  top:0;
+  left: 70rpx;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666;
+  width: 80%
+}
+
+.tag {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.tag view {
+  flex: 0 0 22%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+
+picker {
+  position: relative;
+  width: 30%;
+}
+
+picker:after {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -6rpx;
+  right: 10rpx;
+  border-color: #444 #fff #fff #fff;
+  border-style: solid;
+  border-width:14rpx 8rpx 0 8rpx;
+  height: 0;
+  width: 0;
+}

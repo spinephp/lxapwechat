@@ -1,0 +1,14 @@
+<!--pages/message/message.wxml-->
+ <view class="tags">
+   <scroll-view scroll-y style="height:{{height}};" >
+    <view wx:for="{{list}}" wx:key="id" wx:for-index="i" class="tag-box">
+      <view class="list-item {{currentItem==item.id?'active-tag':''}}" data-id="{{item.id}}" bindtap="tagChoose">
+        <image src='{{item.img}}'></image>
+        <view class='box'>
+        <view class='top'><view class='title'>{{item.title}}</view><view class='date'>{{item.date}}</view></view>
+        <view class='context'>{{item.context}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

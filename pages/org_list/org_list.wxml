@@ -1,0 +1,20 @@
+<import src="/pages/template/template.wxml"/>
+<view class="container">
+<view class="header">
+<view class='search'>
+      <image src="/images/search_icon.png"></image>
+      <input placeholder='搜索附近机构' bindconfirm="change" value='{{keyword}}'></input>
+    </view>
+</view>
+  
+
+  <view style="background:#fff;margin-top:130rpx;border-top:20rpx solid #e6e6e6">
+    <view class="tag">
+      <picker bindchange="typeChange" value="{{type_index}}" range-key="text" range="{{type_list}}"><view>{{type_list[type_index].text}}</view></picker>
+      <picker bindchange="orderChange" value="{{order_index}}" range-key="text" range="{{order_list}}"><view>{{order_list[order_index].text}}</view></picker>
+    </view>
+    <template is='org_list' data='{{list}}'></template>
+  </view>
+
+
+</view>

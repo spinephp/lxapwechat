@@ -1,0 +1,18 @@
+<scroll-view class="page" scroll-y="true">
+    <view id="username-editing" class="layout-padding ng-scope">
+      <view class="cell-group">
+  <form bindsubmit='updataInfo'>
+    <radio-group class="radio-group" wx:if="{{property=='gender'}}" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{index}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+    <view wx:else>
+        <input type="text" name='property' maxlength="{{maxLength}}" placeholder="请输入{{propertyName}}" bindinput="changeStatus" class="ng-pristine ng-valid ng-not-empty ng-touched" value="{{propertyValue}}" />
+       <text class="input-clear {{display}}" catchtap="clearText"></text>
+    </view>
+      <button class="btn-primary {{class}}" disabled="{{disabled}}" form-type='submit' data-nickname="{{propertyValue}}">确定</button>
+       </form>
+      </view>
+    </view>
+</scroll-view>

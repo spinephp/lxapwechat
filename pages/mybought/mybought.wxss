@@ -1,0 +1,2 @@
+/* pages/mybought/mybought.wxss */
+@import '/pages/template/template.wxss';

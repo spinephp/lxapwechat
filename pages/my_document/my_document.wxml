@@ -1,0 +1,10 @@
+<!--pages/my_document/my_document.wxml-->
+<view class="mydoc">
+<view bindtap="changeImg"><text class="left">修改头像</text><image src="{{person.img}}"></image></view>
+<view data-property='nick' bindtap='changeProperty'><text class="left">昵称</text><view><text class="right">{{person.nick}}</text> ></view></view>
+<view data-property='name' bindtap='changeProperty'><text class="left">姓名</text><view><text class="right">{{person.name}}</text> ></view></view>
+<view data-property='gender' bindtap='changeProperty'><text class="left">性别</text><view><text class="right">{{items[person.gender]}}</text> ></view></view>
+<view data-property='mobile' bindtap='changeProperty'><text class="left">手机号</text><view><text class="right">{{person.mobile}}</text> ></view></view>
+<view data-property='address' bindtap='changeProperty'><text class="left">地址</text><view><text class="right">{{person.address}}</text> ></view></view>
+
+</view>

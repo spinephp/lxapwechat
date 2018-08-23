@@ -1,0 +1,75 @@
+<view class="box">
+  <form bindsubmit='updataInfo'>
+    <view class="item">
+      <image src="/images/name.png" class="name"></image>
+      <input name="name" placeholder='请输入姓名' placeholder-class='place'></input>
+    </view>
+    <view class="item">
+      <image src="/images/phone.png"></image>
+      <input name="phone" placeholder='请输入联系电话' placeholder-class='place'></input>
+    </view>
+
+    <view class="class_detail clear">
+      <view class="left">
+        <image src="/images/course.png"></image>
+      </view>
+      <view class="right">
+        <view class="course_name clear">
+          <text class="c_name">{{course_info.name}}</text>
+          <view class="distance">
+            <image src="/images/pos.png"></image>
+            <text>{{distance}}km</text>
+          </view>
+        </view>
+        <view class="clear"></view>
+        <view class="org_name">[{{course_info.organization.name}}]</view>
+        <view class="other clear">
+          <view class="price" wx:if="{{couponsCount!=0}}">
+            <text class='active_price'>免费</text>
+          </view>
+          <view class="price" wx:else>
+            <text class='active_price'>￥{{course_info.price}}</text>
+            <text class='init_price'>￥{{course_info.store_price}}</text>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+    <view class="img">
+      <image src="/images/color_bar.png"></image>
+    </view>
+    <view class="item coupons">
+  
+      <image src="/images/coupons.png" class="couponsIcon"></image>
+      <text wx:if="{{couponsCount!=0 && auditionId==''}}">请选择优惠券</text>
+      <text wx:elif="{{auditionId}}">已选优惠券</text>
+      <text wx:else>暂无试听券</text>
+      <view class="right" wx:if="{{couponsCount!=0}}">
+        <navigator wx:if="{{auditionId}}" url="/pages/audition_stamps/audition_stamps?checkId={{auditionId}}&courseId={{courseId}}">
+          <text>平台通用试听券</text>
+          <image src="/images/arrow_r.png"></image>
+        </navigator>
+        <navigator wx:else url="/pages/audition_stamps/audition_stamps?courseId={{courseId}}">
+          <text>平台通用试听券</text>
+          <image src="/images/arrow_r.png"></image>
+        </navigator>
+        
+      </view>
+      <view class="right" wx:else>
+        <!--<navigator>
+          <text>快去A+商城兑换吧</text>
+          <image src="/images/arrow_r.png"></image>
+        </navigator>-->
+        <text>暂无试听券</text>
+      </view>
+      <input style="display:none"></input>
+    </view>
+
+
+    <view class="submitBtn" hidden='{{couponsCount==0}}'>
+      <button form-type="submit">申请试听</button>
+    </view>
+  </form>
+</view>

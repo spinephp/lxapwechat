@@ -1,0 +1,23 @@
+<view class="box">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view class="item"  wx:for="{{items}}" wx:key="key">
+      <view class='radio'>
+        <label class="radio">
+          <radio value="{{item.id}}" checked="{{item.id==checkId}}" color="#D51E03"/>
+        </label>
+      </view>
+      <view class="redpackage {{item.id==checkId?'cur':''}}">
+
+        <view class='money'>
+          <text>￥</text>
+          <text>{{item.preferential_amount}}</text>
+        </view>
+        <image src='/images/redpacket.png'></image>
+        <view class='illustrate'>
+          <view>平台通用红包</view>
+          <view>{{item.introduce}}</view>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+</view>

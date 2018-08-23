@@ -1,0 +1,28 @@
+var filters = {
+  toFix: function (value) {
+    var value = value || 0
+    var dis = parseFloat(value) / 1000;
+    return dis.toFixed(1)//此处2为保留两位小数
+  },
+  dateFormat: function (date) {
+    var date = date || '2018-8-8 08:08'
+    var str = '';
+    var arr = date.split(' ');
+    var arr1 = arr[0].split('-');
+    str = arr1[1] + '月' + arr1[2] + '日  ' + arr[1].slice(0, 5);
+    return str;
+  },
+  intro: function (intro) {
+    var intro = intro || '课程简介'
+    var org_intro = intro.length > 60 ? intro.slice(0, 60) + '. . .' : intro;
+    return org_intro;
+  },
+  
+
+}
+module.exports = {
+  toFix: filters.toFix,
+  dateFormat: filters.dateFormat,
+  intro: filters.intro,
+  
+}

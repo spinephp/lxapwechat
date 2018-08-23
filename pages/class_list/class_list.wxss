@@ -1,0 +1,188 @@
+@import '/pages/template/template.wxss';
+
+.header {
+  background: #fff;
+  padding-top: 40rpx;
+  padding-bottom: 30rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.search {
+  width: 90%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  position: relative;
+  background: #f2f2f2;
+  line-height: 60rpx;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+
+.search image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+}
+
+.search input {
+  position: absolute;
+  top: 0;
+  left: 70rpx;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666;
+  width: 80%;
+}
+
+.tag {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  font-size: 28rpx;
+}
+
+.tag view {
+  flex: 0 0 22%;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #333;
+}
+
+.tag image {
+  height: 20rpx;
+  width: 24rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4rpx;
+}
+
+.tag text {
+  vertical-align: middle;
+}
+
+.tag .cur {
+  color: #000;
+  font-size: 32rpx;
+}
+
+picker {
+  position: relative;
+  width: 30%;
+}
+
+picker:after {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -6rpx;
+  right: 10rpx;
+  border-color: #444 #fff #fff #fff;
+  border-style: solid;
+  border-width: 14rpx 8rpx 0 8rpx;
+  height: 0;
+  width: 0;
+}
+
+/*从右划出*/
+
+
+.prompt{
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top:0;
+  left:0;
+  display: block;
+  width: 100%;
+  z-index: 999999;
+  overflow: hidden;
+  height: 100%;
+
+}
+           
+.mask {
+  background: #fff;
+  color: #333;
+  padding: 4%;
+  width: 80%;
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100%;
+}
+
+.mask .title {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+}
+
+.mask .c_type view {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  background: #eee;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+.mask .c_type .cur_type{
+  background: #ffa500;
+  color: #fff
+}
+
+.mask .c_type .no_margin {
+  margin-right: 0;
+}
+.mask .course_price{
+  margin-top:10rpx;
+}
+.mask .course_price .write input{
+
+  border-radius: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 156rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background: #eee;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+}
+.mask .course_price .write text{
+  margin: 0 20rpx;
+}
+.mask .btn{
+
+  height: 70rpx;
+  line-height: 70rpx;
+  position: absolute;
+  bottom: 60rpx;
+  right:0;
+  width: 100%;
+
+}
+.mask .btn text{
+  display: inline-block;
+  width: 50%;
+  text-align: center
+}
+.mask .btn .reset{
+  background: #eee;
+}
+.mask .btn .sure{
+  background: #ffa500;
+  color: #fff;
+}

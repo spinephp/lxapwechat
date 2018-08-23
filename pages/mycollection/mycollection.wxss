@@ -1,0 +1,2 @@
+/* pages/my_Collection/my_collection.wxss */
+@import '/pages/template/template.wxss';

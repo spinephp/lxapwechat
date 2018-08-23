@@ -1,0 +1,74 @@
+{
+  "pages": [
+    
+    "pages/authorization/authorization",
+    "pages/index/index",
+    "pages/red_packet/red_packet",
+    "pages/audition/audition",
+    "pages/audition_stamps/audition_stamps",
+    "pages/pay/pay",
+    "pages/success/success",
+    "pages/bargain_detail/bargain_detail",
+    "pages/bargain_detail_share/bargain_detail_share",
+    "pages/groupBuy_detail/groupBuy_detail",
+    "pages/groupBuy_detail_share/groupBuy_detail_share",
+    "pages/class_list/class_list",
+    "pages/class_detail/class_detail",
+    "pages/course/course",
+    "pages/org_list/org_list",
+    "pages/org_detail/org_detail",
+    "pages/topics/topics",
+    "pages/my/my",
+    "pages/search/search",
+    "pages/active_list/active_list",
+    "pages/template/template",
+    "pages/my_document/my_document",
+    "pages/propertyEdit/propertyEdit",
+    "pages/message/message",
+    "pages/mycollection/mycollection",
+    "pages/myfoot/myfoot",
+    "pages/mysyllabus/mysyllabus",
+    "pages/mycoiling/mycoiling",
+    "pages/mybought/mybought",
+    "pages/myeval/myeval",
+    "pages/mybargain/mybargain",
+    "pages/myevaluating/myevaluating",
+    "pages/mygroup/mygroup",
+    "pages/myaboutus/myaboutus",
+    "pages/myexchange/myexchange",
+    "pages/myauditions/myauditions"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "selectedColor": "#30A7E6",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index_active.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "/images/courseIcon.png",
+        "selectedIconPath": "/images/course_active.png"
+      },
+      
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my_active.png"
+      }
+    ]
+  }
+}

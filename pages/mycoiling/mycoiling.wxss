@@ -1,0 +1,125 @@
+/* pages/mycoiling/mycoiling.wxss */
+page{ 
+ display: flex; 
+ flex-direction: column; 
+ height: 100%; 
+ background-color: #eee
+} 
+.navbar{ 
+ flex: none; 
+ display: flex; 
+ background: #fff; 
+} 
+.navbar .item{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+} 
+.navbar .item.active{ 
+  font-weight: bold;
+ color: black; 
+} 
+.navbar .item.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 150rpx; 
+ right: 150rpx; 
+ height: 4rpx; 
+ background: rgb(109, 161, 245);
+} 
+.redpackage{
+  height:160rpx;
+  display: flex;
+  align-items: center;
+  margin:20rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #fb3850, #e01b42);
+}
+.redpackage .money{
+  width:34%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  border-right: 1rpx dotted #FFFFFF;
+  color:#ffd200;
+  }
+.redpackage .money text:first-child{
+  font-size: 28rpx;
+  padding-top: 20rpx;
+}
+.redpackage .money text:last-child{
+  font-size:46rpx;
+}
+.redpackage .illustrate{
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding-left: 30rpx;
+  color:white;
+}
+.redpackage .illustrate view:first-child{
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  color:#fffefe;
+}
+.redpackage .illustrate view:last-child{
+  font-size: 24rpx;
+  color:#ffffff;
+}
+
+.auditions{
+  height:160rpx;
+  display: flex;
+  align-items: center;
+  margin:20rpx;
+  border-radius: 10rpx;
+  background-color: white;
+}
+.auditions .money{
+  width:34%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  background-color: #6593f5;
+  }
+.auditions .money text{
+  font-size:48rpx;
+}
+.auditions .illustrate{
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding-left: 30rpx;
+  color:gray;
+}
+.auditions .illustrate view{
+  width:100%;
+}
+.auditions .illustrate view:first-child{
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.auditions .illustrate view:first-child text:first-child{
+  width:100rpx;
+}
+.auditions .illustrate view:first-child text:last-child{
+  text-overflow:ellipsis;  
+  white-space:nowrap;  
+  overflow:hidden;  
+  width:310rpx;  
+}
+.auditions .illustrate view:last-child{
+  font-size: 26rpx;
+}

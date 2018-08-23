@@ -1,0 +1,20 @@
+<view class="box">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view class="item"  wx:for="{{items}}" wx:key="key">
+      <view class='radio'>
+        <label class="radio">
+          <radio value="{{item.id}}" data-amount="{{item.preferential_amount}}" checked="{{item.id==checkId}}" color="#D51E03"/>
+        </label>
+      </view>
+      <view class="redpackage">
+      <image src="/images/auditionBg_active.png" wx:if="{{item.id==checkId}}"></image>
+      <image src="/images/auditionBg_off.png" wx:else></image>
+        <view class='money'>试听券</view>
+        <view class='illustrate'>
+          <view><text class="prompt">机构：</text><text class="org_name">{{item.org_name}}</text></view>
+          <view>适用范围：任意课程</view>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+</view>

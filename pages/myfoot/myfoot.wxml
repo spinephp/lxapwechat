@@ -1,0 +1,4 @@
+<!--pages/myfoot/myfoot.wxml-->
+<import src="/pages/template/template.wxml"/>
+
+  <template is="list" data="{{list}}"></template>

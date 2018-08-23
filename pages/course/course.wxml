@@ -1,0 +1,25 @@
+<view class="content clear">
+  <view class="left">
+    <scroll-view scroll-y style="height:{{height}}px;">
+      <view class="scroll-view-item {{cur_index==index?'cur':''}} {{type_course==item.value?'cur':''}}" wx:for-index='index' wx:for="{{type_list}}" data-type="{{item.value}}" data-typetext="{{item.text}}" catchtap='refreshData' data-index="{{index}}" wx:key="key">{{item.text}}</view>
+    </scroll-view>
+  </view>
+  <view class="right" >
+  
+    <view class="banner">
+      <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{banner}}"></image>
+    </view>
+    <view class="title">{{type_text}}</view>
+    <view class="course_list clear">
+     <scroll-view scroll-y style="height:{{height-164}}px;">
+      <view class='course-item' wx:for="{{course_list}}" wx:key="key" wx:for-item="item">
+        <navigator url="/pages/class_detail/class_detail?id={{item.id}}">
+          <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.picurl}}"></image>
+          <view>{{item.name}}</view>
+        </navigator>
+      </view>
+         </scroll-view>
+    </view>
+ 
+  </view>
+</view>

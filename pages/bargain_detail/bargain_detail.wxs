@@ -1,0 +1,15 @@
+var filters = {
+  toDate: function (value) {
+    
+    var str=value.slice(5,16);
+    return str;
+  },
+  toFix: function (value) {
+    var dis = parseFloat(value);
+    return dis.toFixed(2)//此处2为保留两位小数
+  }
+}
+module.exports = {
+  toDate: filters.toDate,
+  toFix: filters.toFix
+}
