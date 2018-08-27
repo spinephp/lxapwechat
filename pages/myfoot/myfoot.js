@@ -32,12 +32,14 @@ Page({
     var val2 = obj2.ct;
     if (val1 > val2) {
       return -1;
-    } else if (val1 > val2) {
+    } else if (val1 < val2) {
       return 1;
     } else {
       return 0;
     }
   },
+
+  // 转换日期为常用格式
   conventDate:function(mDate){
     var today = new Date();
     var date = mDate.split('-'),
@@ -53,11 +55,14 @@ Page({
         break;
       case 1:
         result = "昨天";
+        break;
       default:
         result = yy+'年'+mm+'月'+dd+'日';
     }
     return result;
   },
+
+  // 处理一条记录
   proccessItem:function(item){
     var that = this;
     item.forEach(function (value, index, array) {

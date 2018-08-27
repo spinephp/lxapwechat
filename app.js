@@ -7,11 +7,13 @@ const getLogin = promisify(wx.login)
 const request = promisify(wx.request);
 const basePath = 'https://fudao.myipp.cn/lxap/api/wechatsmallprogram';
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
+    
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    wx.setStorageSync('scene', options.scene)
 
     // 登录
     getLogin().then(res => {
@@ -42,12 +44,7 @@ App({
               wx.setStorageSync('wspuId', res.data.data.id);
               wx.setStorageSync('pos_info', JSON.stringify(pos_info));
               wx.setStorageSync('userInfo', JSON.stringify(userInfo));
-              /*wx.switchTab({
-                url: '../index/index',
-              })*/
-            
               
-
               }else{
                 wx.showToast({
                   title: res.data.msg,

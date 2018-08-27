@@ -40,7 +40,8 @@ Page({
           gender:res.data.data.gender,
           img: app.globalData.imgurl+res.data.data.avatar_url,
           coin : res.data.data.ap_balance,
-          mobile:res.data.data.phone
+          mobile:res.data.data.phone,
+          address:res.data.data.address
         });
       } else {
         wx.showToast({
@@ -205,14 +206,21 @@ Page({
     wx.navigateTo({
       url: '../myaboutus/myaboutus'//?queryBean=' + queryBean
     })
-  }
-  ,
+  },
 
   // 我的试听课
   myauditions: function () {
     //var queryBean = JSON.stringify(this.data)
     wx.navigateTo({
       url: '../myauditions/myauditions'//?queryBean=' + queryBean
+    })
+  },
+
+  // 我的兑换
+  myexchange: function () {
+    //var queryBean = JSON.stringify(this.data)
+    wx.navigateTo({
+      url: '../myexchange/myexchange'//?queryBean=' + queryBean
     })
   },
   calling:function(){

@@ -15,6 +15,10 @@
   color: #aaa;
 }
 
+.mydoc view:last-child{
+  border:none;
+}
+
 .mydoc .left{
   width:150rpx;
   text-align: left;

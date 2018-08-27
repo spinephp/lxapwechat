@@ -1,3 +1,4 @@
+<wxs module="filters" src="pay.wxs"></wxs>
 <view class="box">
   <form bindsubmit='pay'>
     <view class="item">
@@ -64,7 +65,7 @@
     </view>
     <view class="submitBtn">
       <button form-type="submit" wx:if="{{!red_price}}">支付￥{{cur_price}}</button>
-      <button form-type="submit" wx:else>支付￥{{cur_price-red_price}}</button>
+      <button form-type="submit" wx:else>支付￥{{filters.toFix(cur_price-red_price)}}</button>
     </view>
   </form>
 </view>

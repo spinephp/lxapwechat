@@ -64,9 +64,11 @@ function request(data,fun){
     wspuId: wx.getStorageSync('wspuId')
   }
   if(data.dataEx!=undefined){
-    for(let dx in data.dataEx){
-      d[dx] = data.dataEx[dx]
-    }
+    //for(let dx in data.dataEx){
+    //  d[dx] = data.dataEx[dx]
+    //}
+    data.dataEx['wspuId'] = wx.getStorageSync('wspuId')
+    d = data.dataEx
   }
   _request({
     url: getApp().globalData.url + data.suburl,

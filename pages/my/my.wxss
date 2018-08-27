@@ -23,9 +23,9 @@
   padding: 20rpx;
 }
 .other{
-  height:170rpx;
+  height:171rpx;
   margin: 0 20rpx;
-  padding-top:20rpx;
+  padding-top:22rpx;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
@@ -135,6 +135,20 @@
   z-index: 9000;
   opacity: 0.1;
 }
+.modalDlg0 {
+  width: 100%;
+  position: fixed;
+  top: 81%;
+  left: 0;
+  z-index: 1;
+  margin: 0rpx 0rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  color:#ffffff;
+}
 .modalDlg {
   width: 100%;
   position: fixed;
@@ -161,6 +175,7 @@
   height:70rpx;
   font-size: 28rpx;
   background-color: white;
+  border: none;
   border-radius: 0;
   margin:5rpx 0;
 }

@@ -94,30 +94,12 @@ Page({
   changeImg:function(){
     var _this = this;
     common.addImage(function (res) {
-      request({
-        url: app.globalData.url + 'user/setUserInfo',
-        data: {
-          wspuId: wx.getStorageSync('wspuId'),
-          avatar_url:res
-        },
-        method: 'GET',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        }
-      }).then(res => {
-        if (res.data.isSuccess) {
-          var person = _this.data.person
-          person.img = app.globalData.imgurl + res.data.data.avatar_url
-          _this.setData({
-            person:person
-          })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-          })
-        }
-      }).catch(res => {
-
+      common.request({ suburl: 'user/setUserInfo', dataEx: { avatar_url: res}},function(res){
+        var person = _this.data.person
+        person.img = app.globalData.imgurl + res.avatar_url
+        _this.setData({
+          person: person
+        })
       })
     })
   },

@@ -1,6 +1,5 @@
 var common = require('../../utils/public.js');
 Page({
-
   data: {
     course_id: '',
     teacher: '',
@@ -42,12 +41,13 @@ Page({
     })
   },
   prevImg: function (event) {
-
     var src = event.currentTarget.dataset.src;//获取data-src
     var imgList = event.currentTarget.dataset.list;//获取data-list
+    
     for (var i = 0; i < imgList.length; i++) {
-      imgList[i] = 'https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/' + imgList[i];
+      imgList[i] = 'https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/' + imgList[i].path;
     }
+    console.log(src,imgList);
 
     //图片预览
     wx.previewImage({

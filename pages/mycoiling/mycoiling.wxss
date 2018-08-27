@@ -45,6 +45,7 @@ page{
   justify-content:center;
   align-items:center;
   border-right: 1rpx dotted #FFFFFF;
+  z-index: 9999;
   color:#ffd200;
   }
 .redpackage .money text:first-child{

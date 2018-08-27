@@ -81,42 +81,40 @@ Page({
   onShareAppMessage: function () {
   
   },
+
+  // 处理服务器返回数据
+  _loadData:function(res,lists,idx,applyName){
+    var that = this
+    if (res.length > 0) {
+      res.forEach(function (value, index, array) {
+        value.c_id = value.course_id
+        value.o_id = value.id
+        value.id = value.course_id
+        value.applyName = applyName
+        value.toproworderno = true;
+        lists[idx].push(value)
+      })
+      that.setData({
+        list: lists[that.data.currentTab],
+        lists: lists
+      });
+    }
+  },
+
+  // 向服务器请求数据
   loadData:function(){
     var that = this;
     var lists = [[],[]]
-    common.request({ suburl: 'orderform/getTobeEvaluatedCourseList' }, function (res) {
-      if (res.length > 0) {
-        res.forEach(function (value, index, array) {
-          value.c_id = value.course_id
-          value.o_id = value.id
-          value.id = value.course_id
-          value.applyName = "评价"
-          value.toproworderno = true;
-          lists[0].push(value)
-        })
-        that.setData({
-          list: lists[that.data.currentTab],
-          lists: lists
-        });
-      }
-    })
-    common.request({ suburl: 'orderform/getEvaluatedCourseList' }, function (res) {
-      if (res.length > 0) {
-        res.forEach(function (value, index, array) {
-          value.c_id = value.course_id
-          value.o_id = value.id
-          value.id = value.course_id
-          value.applyName = "查看详情"
-          value.toproworderno = true;
-          lists[1].push(value)
-        })
-        that.setData({
-          list: lists[that.data.currentTab],
-          lists: lists
-        });
-      }
-    })
+    var items = [
+      { url: 'orderform/getTobeEvaluatedCourseList', fun: function (res) { that._loadData(res, lists,0,'评价')} },
+      { url: 'orderform/getEvaluatedCourseList',fun: function (res) { that._loadData(res, lists,1, '查看详情')}}
+    ]
+    for(var i in items){
+      common.request({ suburl: items[i].url }, items[i].fun)
+    }
   },
+
+  // 处理用户点击事件
   apply_click: function (e) {
     var id = e.currentTarget.dataset.id
     switch (this.data.currentTab) {

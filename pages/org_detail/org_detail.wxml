@@ -50,7 +50,7 @@
       <view class="ryzz" hidden="{{hardwareList.length==0}}">
         <view class='title'>硬件设施</view>
         <view style="border-bottom: none;" class="img_list clear">
-          <image bindtap="prevImg" data-list="{{hardwareList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{hardwareList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}"></image>
+          <image bindtap="prevImg" data-list="{{hardwareList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{hardwareList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:key="key"></image>
           
         </view>
       </view>
@@ -58,7 +58,7 @@
       <view class="ryzz" hidden="{{honorList.length==0}}">
         <view class='title'>荣誉资质</view>
         <view class="img_list clear">
-          <image bindtap="prevImg" data-list="{{honorList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{honorList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}"></image>
+          <image bindtap="prevImg" data-list="{{honorList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:for="{{honorList}}" wx:for-item="item" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item}}" wx:key="key"></image>
         </view>
       </view>
     </view>
@@ -66,7 +66,7 @@
 
     <view hidden="{{curIndex==3?false:true}}" class="box_border">
       <view class="teacherList">
-        <view class="teacherItem clear" wx:for="{{teacher_list}}" wx:for-item="item">
+        <view class="teacherItem clear" wx:for="{{teacher_list}}" wx:for-item="item" wx:key="key">
           <view class="circle">
             <image src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{item.headurl}}"></image>
           </view>

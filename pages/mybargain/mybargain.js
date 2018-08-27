@@ -131,22 +131,12 @@ Page({
   apply_click:function(e){
     var id = e.currentTarget.dataset.id
     var obj = this.data.list[e.currentTarget.dataset.index]
-    switch (this.data.currentTab){
-      case 0:// 待完成
-        wx.navigateTo({
-          url: '../bargain_detail/bargain_detail?courseId=' + obj.course_id
-        })
-        break;
-      case 1:// 待支付
-        wx.navigateTo({
-          url: '../pay/pay?courseId=' + obj.course_id + "&type=bargain&activeId=" + obj.bargain_id
-        })
-        break;
-      case 2:// 已支付
-        wx.navigateTo({
-          url: '../class_detail/class_detail?id=' + obj.course_id
-        })
-        break;
-    }
+    wx.navigateTo({
+      url: [
+        '../bargain_detail/bargain_detail?courseId=' + obj.course_id,
+        '../pay/pay?courseId=' + obj.course_id + "&type=bargain&activeId=" + obj.c_id,
+        '../class_detail/class_detail?id=' + obj.course_id
+      ][this.data.currentTab]
+    })
   }
 })

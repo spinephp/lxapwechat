@@ -80,17 +80,23 @@ Page({
   onShareAppMessage: function () {
   
   },
+
+  // 用户点击了五星
   starclick: function (e) {
     var index = e.currentTarget.dataset.id
     this.setData({
       selectedstars: index + 1
     })
   },
+
+  // 用户输入了字符
   bindinput:function(e){
     this.setData({
       evalText: e.detail.value
     })
   },
+
+  // 添加图片
   addimage: function (e) {
     var that = this
     common.addImage(function(res){
@@ -101,6 +107,8 @@ Page({
       })
     })
   },
+
+  // 删除图片
   deleteImage:function(e){
     var index = e.currentTarget.dataset.id
     var imgs = this.data.images
@@ -109,6 +117,8 @@ Page({
       images:imgs
     })
   },
+
+  // 提交评价
   evalsubmit:function(){
     var that = this
     var pages = getCurrentPages();
@@ -125,7 +135,9 @@ Page({
         content: evaltext,
       }
       if(this.data.images.length>0){
+        console.info(this.data.images.length);
         data['picture'] = this.data.images
+        console.info(data)
       }
       common.request({ suburl: 'evaluate/evaluate',method:'POST',dataEx:data }, function (res) {
         var lists = prevPage.data.lists
@@ -133,11 +145,18 @@ Page({
         lists[1].push(evalData);
 
         prevPage.setData({
-          list: list[0],
+          list: lists[0],
           lists: lists
         });
-        wx.navigateBack({
-          delta: 1
+        wx.showModal({
+          title: '提示',
+          content: '评价成功!',
+          showCancel: false,
+         success: function (res) {
+           wx.navigateBack({
+             delta: 1
+           })
+          },
         })
       })
 

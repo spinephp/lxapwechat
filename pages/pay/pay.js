@@ -25,6 +25,30 @@ Page({
     orderNo: ''
 
   },
+  loadBargainDetail: function (id) {
+    var that = this;
+    var para = {
+      url: '/bargain/getUserBargain',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        id: id
+      },
+      successHandler: function (data) {
+        if (data.data.isSuccess) {
+          var curData = data.data.data;
+          that.setData({
+            cur_price:curData.current_price
+          });
+
+        } else {
+
+        }
+      }
+    };
+    common.ajaxSubmit(para);
+  },
   load_detail: function (type) {
     var that = this;
     var wspuId = wx.getStorageSync('wspuId')
@@ -73,19 +97,19 @@ Page({
                 groupBuyingCourseGroupId: that.data.activeId
               })
             }
-          } else {
-
+          } else if (type == 'bargain'){
             //砍价付款
+            that.setData({
+              init_price: curData.price,
+              pay_type: 3,
+              bargainCourseWspuId: that.data.activeId,
+            })
 
           }
-
-
           that.setData({
             distance: (curData.organization.distance / 1000).toFixed(1),
             course_info: curData
           });
-
-
         }
       }
     };
@@ -220,7 +244,6 @@ Page({
       successHandler: function (res) {
         if (res.data.isSuccess) {
           var resultParams = res.data.data;
-
           that.setData({
             orderNo: resultParams.out_trade_no
           })
@@ -265,7 +288,6 @@ Page({
                   wx.navigateTo({
                     url: '/pages/success/success?type=3&title=砍价成功',
                   })
-
                 } else {
                   wx.navigateTo({
                     url: '/pages/success/success?type=1&title=支付成功',
@@ -278,7 +300,10 @@ Page({
               }
             })
           }
-
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+          })
         }
 
       }
@@ -298,9 +323,7 @@ Page({
     //砍价 砍价Id 活动 活动Id 团购 团购Id
     var activeId = options.activeId;
     var state = options.state;
-
-
-
+    var bargainId=options.bargainId;
     if (activeId) {
       this.setData({
         activeId: activeId,
@@ -316,7 +339,13 @@ Page({
       type: type,
     });
     this.load_detail(type);
-    this.load_redPackage();
+    if(type=='normal'){
+      this.load_redPackage();
+    }else if(type=='bargain'){
+      this.loadBargainDetail(activeId)
+      
+    }
+   
 
 
 

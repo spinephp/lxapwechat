@@ -16,7 +16,7 @@
   width:90%;
   height:100%;
   color: gray;
-  font-size: 24rpx;
+  font-size: 28rpx;
   margin:0rpx 40rpx;
   align-self: flex-start;
   word-wrap:break-word;

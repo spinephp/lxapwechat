@@ -263,7 +263,7 @@
                 <view class="m">{{item.content}}</view>
                 <view class="tai3">
 
-                  <image bindtap="prevImg" data-list="{{item.pictureList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img}}" wx:for="{{honorList}}" wx:for-item="img" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img.path}}" wx:key="key"></image>
+                  <image bindtap="prevImg" data-list="{{item.pictureList}}" data-src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img}}" wx:for="{{item.pictureList}}" wx:for-item="img" src="https://lxapsit.oss-cn-shanghai.aliyuncs.com/lxapfile/{{img.path}}"  wx:key="key"></image>
                 </view>
                 <view class="tai4" wx:for="{{item.organizationEvaluationList}}" wx:for-item="org_answer" wx:key="key">
                   <image src="/images/dup.png" />

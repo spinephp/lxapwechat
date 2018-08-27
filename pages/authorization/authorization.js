@@ -2,6 +2,7 @@
 const promisify = require('../../utils/promisify')
 const getSetting = promisify(wx.getSetting)
 const getUserInfo = promisify(wx.getUserInfo)
+var common = require('../../utils/public.js')
 Page({
 
   /**
@@ -12,26 +13,19 @@ Page({
     exit:false,
     visibled:true
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("authorization场景值：" + options.scene)
     var that = this
-    if(this.data.exit){
-      wx.navigateBack({
-        delta: -1
-      })
-
-    }
     // 查看是否授权
     getSetting().then(res => {
       if (res.authSetting['scope.userInfo']) {
         getUserInfo().then(res => {
           //用户已经授权过
-          wx.switchTab({
-            url: '../index/index' //?id=' + obj.course_id
-          })
+          that.authorizated(res)
         }).catch(res => {
         })
       }
@@ -44,20 +38,28 @@ Page({
     })
   },
 
+  // 用户已授权
+  authorizated:function(res){
+    var scene = wx.getStorageSync('scene')
+    console.log("场景值："+scene)
+    if (scene!=undefined){
+      common.request({ suburl: 'user/uploadScene',dataEx:{scene:scene} }, function (res) {
+      })
+    }
+    wx.switchTab({
+      url: '../index/index' //?id=' + obj.course_id
+    })
+
+  },
   bindGetUserInfo: function (e) {
     console.log(e.detail.userInfo)
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      wx.switchTab({
-        url: '../index/index' //?id=' + obj.course_id
-      })
+      this.authorizated(e.detail.userInfo)
     } else {
       //用户按了拒绝按钮
       this.setData({
         exit:true
-      })
-      wx.navigateBack({
-        delta:-1
       })
     }
   },
@@ -73,7 +75,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

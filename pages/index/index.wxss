@@ -1,8 +1,8 @@
 @import '/pages/template/template.wxss';
 .header {
   display: flex;
-  height: 120rpx;
-  align-items: center;
+  height: 80rpx;
+  /*align-items: center;*/
   justify-content: center;
   width: 100%;
   position: fixed;
@@ -17,6 +17,7 @@
 }
 .header .position{
   width:30%;
+  margin-top: 8rpx;
 }
 .header .position image {
   width: 40rpx;

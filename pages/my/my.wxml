@@ -33,16 +33,17 @@
   <view class='my_column clear'>
 
     <view bindtap='mybargain'><image src='/images/bargain@2x.png' mode="widthFix"></image><text>砍价</text></view>
-    <!--<view><image src='/images/change@2x.png'></image><text>兑换</text></view>-->
+    <!--<view bindtap='myexchange'><image src='/images/change@2x.png'></image><text>兑换</text></view>-->
     <view bindtap='myaboutus'><image src='/images/aboutus@2x.png' mode="widthFix"></image><text>关于我们</text></view>
     <view bindtap='connecting'><image src='/images/service@2x.png' mode="widthFix"></image><text>联系客服</text></view>
     
     </view ></view>
 </view>
 
+<view class="modalDlg0"></view>
 <view class="modalDlg" wx:if="{{showModal}}">
   <view bindtap='calling'>电话客服</view>
-  <button open-type='contact'>消息客服</button>
+  <button open-type='contact' type='default-light'>消息客服</button>
   <view class='close_mask' bindtap="close_mask">取消</view>
 </view>
 <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

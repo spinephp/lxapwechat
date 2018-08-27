@@ -1,0 +1,10 @@
+<import src="/pages/template/template.wxml"/>
+<template name='navbar'>
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+</view> 
+<view wx:for="{{navbar}}" hidden="{{currentTab!==index}}">
+  <template is="listEx" data="{{list}}"></template> 
+</view> 
+
+</template>

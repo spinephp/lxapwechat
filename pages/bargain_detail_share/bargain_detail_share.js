@@ -173,7 +173,7 @@ Page({
             disPrice: parseFloat(curData.course_price - curData.current_price).toFixed(2)
 
           });
-          if (curData.current_price == 0 || curData.bargain_people_count == current_people_count){
+          if (curData.current_price == 0 || curData.bargain_people_count == curData.current_people_count){
             that.setData({
               expire: true
 

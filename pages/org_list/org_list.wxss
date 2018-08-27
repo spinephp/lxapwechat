@@ -1,8 +1,7 @@
 @import '/pages/template/template.wxss';
 .header{
   background: #fff;
-  padding-top: 40rpx;
-  padding-bottom: 30rpx;
+  padding-bottom: 20rpx;
   position: fixed;
   top:0;
   left:0;
@@ -71,4 +70,12 @@ picker:after {
   border-width:14rpx 8rpx 0 8rpx;
   height: 0;
   width: 0;
+}
+
+.noData{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  width: 100%;
+  color: #999
 }

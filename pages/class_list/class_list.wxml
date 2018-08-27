@@ -17,8 +17,9 @@
       </view>
     </view>
   </view>
-  <view style="background:#fff;margin-top:244rpx;">
-    <template is="list" data="{{list}}"></template>
+  <view style="background:#fff;margin-top:180rpx;">
+    <template is="list" data="{{list}}" wx:if="{{list.length!=0}}"></template>
+    <view wx:else class='noData'>暂无数据</view>
   </view>
 
 </view>

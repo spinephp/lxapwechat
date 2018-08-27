@@ -254,7 +254,6 @@ Page({
     this.setData({
       pos_info:pos_info
     })
-
     //加载banner
     this.loadBanner();
 
@@ -264,6 +263,13 @@ Page({
     //加载附近课程
     this.loadList();
     
+    console.log("index场景值：" + scene)
+    var scene = decodeURIComponent(options.scene)
+    if (scene != undefined) {
+      common.request({ suburl: 'user/uploadScene', dataEx: { scene: scene } }, function (res) {
+        console.log(res.success)
+      })
+    }
     
     
   
@@ -280,7 +286,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 
   /**

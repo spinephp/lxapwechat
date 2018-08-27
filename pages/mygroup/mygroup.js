@@ -99,7 +99,7 @@ Page({
 
         } else if (value.status == 'fail') {
           value.applyName = "退款中"
-          value.applyNameStyle = 'background-color:white;color:red;border:1px solid #ddd;'
+          value.applyNameStyle = 'background-color:white;color:red;'
           value.toproworderno = false;
           list[1].push(value)
         } else if (value.status == 'success') {

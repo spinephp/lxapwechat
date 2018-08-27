@@ -18,7 +18,7 @@
 <view class='section'>
   <view class='left'>
     <view wx:for="{{dlist}}"  wx:key='this' data-index='{{index}}' catchtap='clickDate'>
-      <view class='daterow'><text class="{{index==selected? 'dot_active':'dot'}}">●</text> <text class="{{index==selected? 'date_active':'date'}}">{{item.date}}</text></view>
+      <view class='daterow'><text class="{{index==selected? 'dot_active':'dot'}}"></text> <text class="{{index==selected? 'date_active':'date'}}">{{item.date}}</text></view>
       <view class='vline' wx:for="{{lines}}">|</view>
     </view>
   </view>

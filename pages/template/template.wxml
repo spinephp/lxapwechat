@@ -167,7 +167,7 @@
           <view class='active_price'>{{payPriceName || ''}}￥{{charge}}</view>
           <view><text class='init_price_title'>原价：</text><text class='init_price'>￥{{store_price}}</text></view>
         </view>
-        <view class="apply" data-id='{{c_id}}' data-index='{{index}}' catchtap='apply_click' style="{{applyNameStyle==undefined? '':applyNameStyle}}">
+        <view class="apply" data-id='{{c_id}}' data-index='{{index}}' catchtap="{{applyNameStyle==undefined? 'apply_click':null}}" style="{{applyNameStyle==undefined? '':applyNameStyle}}">
           <text class='joinBtn'>{{applyName}}</text>
         </view>
       </view>

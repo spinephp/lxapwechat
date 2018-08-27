@@ -8,12 +8,13 @@
 </view>
   
 
-  <view style="background:#fff;margin-top:130rpx;border-top:20rpx solid #e6e6e6">
+  <view style="background:#fff;margin-top:80rpx;border-top:20rpx solid #e6e6e6">
     <view class="tag">
       <picker bindchange="typeChange" value="{{type_index}}" range-key="text" range="{{type_list}}"><view>{{type_list[type_index].text}}</view></picker>
       <picker bindchange="orderChange" value="{{order_index}}" range-key="text" range="{{order_list}}"><view>{{order_list[order_index].text}}</view></picker>
     </view>
-    <template is='org_list' data='{{list}}'></template>
+    <template is='org_list' data='{{list}}' wx:if="{{list.length!=0}}"></template>
+    <view wx:else class='noData'>暂无数据</view>
   </view>
 
 

@@ -84,20 +84,7 @@ Page({
     common.ajaxSubmit(params);
   },
   setHeight:function(){
-    var winH = wx.getSystemInfoSync().windowHeight;
-    //var query = wx.createSelectorQuery();
-
-    //选择id
-    /*query.select('#myContent').boundingClientRect()
-    query.exec(function (res) {
-      
-
-      var conH = res[0].height;
-      if (winH < conH) {
-        winH = conH;
-      }
-    })*/
-    
+    var winH = wx.getSystemInfoSync().windowHeight;  
     var h = winH;
     this.setData({ height: h });
   },

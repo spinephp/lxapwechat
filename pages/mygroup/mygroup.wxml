@@ -1,21 +1,3 @@
 <!--pages/mygroup/mygroup.wxml-->
-<import src="/pages/template/template.wxml"/>
-<!--导航条--> 
-<view class="navbar"> 
- <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
-</view> 
-  
-<!--待成团--> 
-<view hidden="{{currentTab!==0}}">
-  <template is="listEx" data="{{list}}"></template> 
-</view> 
-  
-<!--拼团成功--> 
-<view hidden="{{currentTab!==1}}"> 
-  <template is="listEx" data="{{list}}"></template> 
-</view> 
-  
-<!--拼团失败--> 
-<view hidden="{{currentTab!==2}}"> 
-  <template is="listEx" data="{{list}}"></template> 
-</view> 
+<import src="/pages/topnavbar/topnavbar.wxml"/>
+<template is="navbar" data="{{currentTab,navbar,list}}"></template> 

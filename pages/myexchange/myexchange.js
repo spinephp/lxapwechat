@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[{fare:30,coin:2500},{fare:10,coin:1000}]
   },
 
   /**

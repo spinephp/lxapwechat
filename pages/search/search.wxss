@@ -1,7 +1,6 @@
 .header {
   display: flex;
-  height: 100rpx;
-  align-items: center;
+  height: 80rpx;
   justify-content: center;
   width: 100%;
   background: #fff;
@@ -22,6 +21,7 @@ picker {
   width: 100%;
    color: #333;
    text-align: center;
+   margin-top: 10rpx;
 }
 
 picker:after {
